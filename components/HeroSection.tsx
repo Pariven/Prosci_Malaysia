@@ -3,22 +3,22 @@ import Link from "next/link"
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-[600px] lg:min-h-[700px] overflow-hidden">
+    <section className="relative min-h-[680px] lg:min-h-[780px] overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0">
         <Image
           src="/images/hero-bg.png"
           alt="Business professionals in a meeting discussing change management"
           fill
-          className="object-cover object-center"
+          className="object-cover object-[center_22%]"
           priority
         />
       </div>
 
       {/* Content Overlay */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center min-h-[600px] lg:min-h-[700px]">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center lg:items-end lg:pb-16 min-h-[680px] lg:min-h-[780px]">
         {/* Semi-transparent Card */}
-        <div className="bg-white/85 backdrop-blur-sm p-8 md:p-12 lg:p-16 max-w-xl lg:max-w-2xl my-12 lg:my-0">
+        <div className="bg-white/90 backdrop-blur-sm p-8 md:p-12 lg:p-16 max-w-xl lg:max-w-2xl my-12 lg:my-0">
           <h1 className="font-serif text-[#3d1a4e] text-4xl md:text-5xl lg:text-6xl leading-tight mb-6">
             Turning complex change into results.
           </h1>

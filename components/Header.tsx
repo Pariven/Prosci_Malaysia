@@ -10,10 +10,15 @@ type MegaMenuColumn = {
   items: string[]
 }
 
+type DropdownItem = {
+  label: string
+  href: string
+}
+
 type NavItem = {
   label: string
   hasDropdown: boolean
-  dropdownItems?: string[]
+  dropdownItems?: DropdownItem[]
   megaMenu?: {
     title: string
     ctaText: string
@@ -41,16 +46,19 @@ const navItems: NavItem[] = [
   {
     label: "Change Management",
     hasDropdown: true,
-    dropdownItems: ["What is Change Management", "Why is Change Management"],
+    dropdownItems: [
+      { label: "What is Change Management", href: "/change-management/what-is-change-management" },
+      { label: "Why is Change Management", href: "/change-management/why-change-management" },
+    ],
   },
   {
     label: "Methodology",
     hasDropdown: true,
     dropdownItems: [
-      "Prosci Methodology Overview",
-      "PCT Model",
-      "ADKAR Model",
-      "Prosci 3-Phase Process",
+      { label: "Prosci Methodology Overview", href: "/methodology-overview" },
+      { label: "PCT Model", href: "/methodology/pct-model" },
+      { label: "ADKAR Model", href: "/methodology/adkar" },
+      { label: "Prosci 3-Phase Process", href: "#" },
     ],
   },
   {
@@ -99,17 +107,28 @@ const navItems: NavItem[] = [
     },
   },
   {
+    label: "ACMC",
+    hasDropdown: true,
+    dropdownItems: [
+      { label: "ACMC Topics", href: "#" },
+    ],
+  },
+  {
     label: "Resources",
     hasDropdown: true,
     dropdownItems: [
-      "Podcast (UNSCRIPTED: Change Management @ Work)",
-      "Webinars",
+      { label: "Podcast (UNSCRIPTED: Change Management @ Work)", href: "#" },
+      { label: "Webinars", href: "#" },
     ],
   },
   {
     label: "About Us",
     hasDropdown: true,
-    dropdownItems: ["Contact Us", "About Prosci", "Why Choose Prosci"],
+    dropdownItems: [
+      { label: "Contact Us", href: "#" },
+      { label: "About Prosci", href: "#" },
+      { label: "Why Choose Prosci", href: "#" },
+    ],
   },
 ]
 export default function Header() {
@@ -305,11 +324,11 @@ export default function Header() {
                     <div className="w-72 rounded-md border border-gray-200 bg-white shadow-lg p-2">
                       {item.dropdownItems.map((subItem) => (
                         <Link
-                          key={subItem}
-                          href="#"
+                          key={subItem.label}
+                          href={subItem.href}
                           className="block rounded px-3 py-2 text-sm text-gray-700 transition-all duration-150 hover:bg-gray-100 hover:translate-x-1 hover:text-[#3d1a4e]"
                         >
-                          {subItem}
+                          {subItem.label}
                         </Link>
                       ))}
                     </div>
@@ -409,12 +428,12 @@ export default function Header() {
                         <div className="space-y-1">
                           {item.dropdownItems.map((subItem) => (
                             <Link
-                              key={subItem}
-                              href="#"
+                              key={subItem.label}
+                              href={subItem.href}
                               className="block rounded-md px-2 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#3d1a4e]"
                               onClick={() => setMobileMenuOpen(false)}
                             >
-                              {subItem}
+                              {subItem.label}
                             </Link>
                           ))}
                         </div>

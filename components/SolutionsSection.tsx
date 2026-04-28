@@ -83,12 +83,6 @@ export default function SolutionsSection() {
               <p className="text-gray-600 text-sm mb-4 leading-relaxed">
                 {solution.description}
               </p>
-              <Link
-                href="#"
-                className="text-[#3d1a4e] font-semibold hover:underline"
-              >
-                Read all
-              </Link>
             </div>
           ))}
         </div>
