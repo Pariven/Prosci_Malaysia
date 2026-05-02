@@ -18,6 +18,7 @@ type DropdownItem = {
 type NavItem = {
   label: string
   hasDropdown: boolean
+  href?: string
   dropdownItems?: DropdownItem[]
   megaMenu?: {
     title: string
@@ -58,7 +59,7 @@ const navItems: NavItem[] = [
       { label: "Prosci Methodology Overview", href: "/methodology-overview" },
       { label: "PCT Model", href: "/methodology/pct-model" },
       { label: "ADKAR Model", href: "/methodology/adkar" },
-      { label: "Prosci 3-Phase Process", href: "#" },
+      { label: "Prosci 3-Phase Process", href: "/methodology/3-phase-process" },
     ],
   },
   {
@@ -108,10 +109,8 @@ const navItems: NavItem[] = [
   },
   {
     label: "ACMC",
-    hasDropdown: true,
-    dropdownItems: [
-      { label: "ACMC Topics", href: "#" },
-    ],
+    hasDropdown: false,
+    href: "https://acmc.my/",
   },
   {
     label: "Resources",
@@ -128,6 +127,7 @@ const navItems: NavItem[] = [
       { label: "Contact Us", href: "#" },
       { label: "About Prosci", href: "#" },
       { label: "Why Choose Prosci", href: "#" },
+      { label: "Gallery", href: "#" },
     ],
   },
 ]
@@ -274,21 +274,33 @@ export default function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-8">
-            {navItems.map((item) => (
-              <div key={item.label} className="relative group">
-                <button
-                  type="button"
-                  className="flex items-center gap-1 whitespace-nowrap rounded-sm px-1 py-0.5 text-gray-800 hover:text-[#3d1a4e] font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3d1a4e]/40"
-                  aria-haspopup="menu"
-                >
-                  {item.label}
-                  {item.hasDropdown && (
-                    <ChevronDown
-                      className="w-4 h-4 transition-transform duration-200 group-hover:rotate-180"
-                    />
+            {navItems.map((item) => {
+              const hasChildren = Boolean(item.dropdownItems?.length || item.megaMenu)
+
+              return (
+                <div key={item.label} className="relative group">
+                  {item.href && !hasChildren ? (
+                    <Link
+                      href={item.href}
+                      className="flex items-center gap-1 whitespace-nowrap rounded-sm px-1 py-0.5 text-gray-800 hover:text-[#3d1a4e] font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3d1a4e]/40"
+                    >
+                      {item.label}
+                    </Link>
+                  ) : (
+                    <button
+                      type="button"
+                      className="flex items-center gap-1 whitespace-nowrap rounded-sm px-1 py-0.5 text-gray-800 hover:text-[#3d1a4e] font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3d1a4e]/40"
+                      aria-haspopup="menu"
+                    >
+                      {item.label}
+                      {item.hasDropdown && (
+                        <ChevronDown
+                          className="w-4 h-4 transition-transform duration-200 group-hover:rotate-180"
+                        />
+                      )}
+                    </button>
                   )}
-                </button>
-                {item.megaMenu ? (
+                  {item.megaMenu ? (
                   <div className="absolute left-1/2 top-full z-40 w-[900px] -translate-x-1/2 pt-4 origin-top invisible opacity-0 -translate-y-2 scale-[0.98] pointer-events-none transition-all duration-200 group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 group-hover:scale-100 group-hover:pointer-events-auto group-focus-within:visible group-focus-within:opacity-100 group-focus-within:translate-y-0 group-focus-within:scale-100 group-focus-within:pointer-events-auto">
                     <div className="border border-gray-200 bg-[#f6f4f2] shadow-lg p-6">
                       <h3 className="text-[36px] leading-none font-playfair text-[#35104b]">{item.megaMenu.title}</h3>
@@ -334,8 +346,9 @@ export default function Header() {
                     </div>
                   </div>
                 ) : null}
-              </div>
-            ))}
+                </div>
+              )
+            })}
           </nav>
 
           {/* Mobile menu button */}
@@ -398,30 +411,37 @@ export default function Header() {
               </div>
 
               <div className="space-y-2">
-                {navItems.map((item) => (
-                  <div key={item.label} className="rounded-xl border border-gray-200 bg-white">
-                    <button
-                      type="button"
-                      className="flex w-full items-center justify-between px-4 py-3 text-left text-sm font-semibold text-gray-800"
-                      onClick={() => {
-                        const hasChildren = Boolean(item.dropdownItems?.length || item.megaMenu)
-                        if (!hasChildren) {
-                          setMobileMenuOpen(false)
-                          return
-                        }
+                {navItems.map((item) => {
+                  const hasChildren = Boolean(item.dropdownItems?.length || item.megaMenu)
 
-                        setOpenMobileSection((current) =>
-                          current === item.label ? null : item.label
-                        )
-                      }}
-                    >
-                      <span>{item.label}</span>
-                      {item.hasDropdown ? (
-                        <ChevronDown
-                          className={`h-4 w-4 transition-transform ${openMobileSection === item.label ? "rotate-180" : "rotate-0"}`}
-                        />
-                      ) : null}
-                    </button>
+                  return (
+                    <div key={item.label} className="rounded-xl border border-gray-200 bg-white">
+                      {hasChildren ? (
+                        <button
+                          type="button"
+                          className="flex w-full items-center justify-between px-4 py-3 text-left text-sm font-semibold text-gray-800"
+                          onClick={() => {
+                            setOpenMobileSection((current) =>
+                              current === item.label ? null : item.label
+                            )
+                          }}
+                        >
+                          <span>{item.label}</span>
+                          {item.hasDropdown ? (
+                            <ChevronDown
+                              className={`h-4 w-4 transition-transform ${openMobileSection === item.label ? "rotate-180" : "rotate-0"}`}
+                            />
+                          ) : null}
+                        </button>
+                      ) : (
+                        <Link
+                          href={item.href ?? "#"}
+                          className="flex w-full items-center justify-between px-4 py-3 text-left text-sm font-semibold text-gray-800"
+                          onClick={() => setMobileMenuOpen(false)}
+                        >
+                          <span>{item.label}</span>
+                        </Link>
+                      )}
 
                     {openMobileSection === item.label && item.dropdownItems?.length ? (
                       <div className="border-t border-gray-100 px-4 py-3">
@@ -463,8 +483,9 @@ export default function Header() {
                         ))}
                       </div>
                     ) : null}
-                  </div>
-                ))}
+                    </div>
+                  )
+                })}
               </div>
             </div>
           </div>

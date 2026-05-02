@@ -17,10 +17,10 @@ const footerLinks = {
   methodology: {
     title: "METHODOLOGY",
     links: [
-      "Prosci Methodology Overview",
-      "Prosci PCT Model",
-      "Prosci ADKAR Model",
-      "Prosci 3-Phase Process",
+      { label: "Prosci Methodology Overview", href: "/methodology-overview" },
+      { label: "Prosci PCT Model", href: "/methodology/pct-model" },
+      { label: "Prosci ADKAR Model", href: "/methodology/adkar" },
+      { label: "Prosci 3-Phase Process", href: "/methodology/3-phase-process" },
     ],
   },
   solutions: {
@@ -118,8 +118,8 @@ export default function Footer() {
             <ul className="space-y-2">
               {footerLinks.methodology.links.map((link, index) => (
                 <li key={index}>
-                  <Link href="#" className="text-gray-300 text-sm hover:text-white transition-colors">
-                    {link}
+                  <Link href={link.href} className="text-gray-300 text-sm hover:text-white transition-colors">
+                    {link.label}
                   </Link>
                 </li>
               ))}

@@ -17,11 +17,7 @@ export default function TransformationIntro() {
               Our decades of research shows that when people understand what&apos;s changing, why it matters, and how to move forward, results follow.
             </p>
             <p className="text-gray-700 leading-relaxed">
-              Prosci brings structure, clarity, and confidence to change—working with leaders, managers, and teams to drive adoption, build organizational readiness and enable{" "}
-              <Link href="#" className="text-[#3d1a4e] underline hover:no-underline">
-                transformation success
-              </Link>
-              .
+              Prosci brings structure, clarity, and confidence to change—working with leaders, managers, and teams to drive adoption, build organizational readiness and enable transformation success.
             </p>
           </div>
         </div>

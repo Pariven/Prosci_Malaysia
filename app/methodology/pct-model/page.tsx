@@ -6,12 +6,7 @@ const navTabs = [
   { label: "Overview", href: "/methodology-overview" },
   { label: "PCT Model", href: "/methodology/pct-model", active: true },
   { label: "ADKAR Model", href: "/methodology/adkar" },
-  { label: "Prosci 3-Phase Process", href: "#" },
-  {
-    label: "An Introduction to Change Management",
-    href: "https://empower.prosci.com/en-us/introduction-to-change-management-guide",
-    icon: "https://www.prosci.com/hubfs/icon-book-damsen.svg",
-  },
+  { label: "Prosci 3-Phase Process", href: "/methodology/3-phase-process" },
 ]
 
 const pctAspects = [

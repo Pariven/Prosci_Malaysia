@@ -1,5 +1,6 @@
 import Header from "@/components/Header"
 import Footer from "@/components/Footer"
+import VideoPanel from "@/components/VideoPanel"
 import Link from "next/link"
 
 const levelCards = [
@@ -43,64 +44,6 @@ const phaseRows = [
     body: "Phase 3 - Sustain Outcomes: To realize the value of the change by ensuring the change is adopted and the organization is committed and prepared to sustain the change.",
   },
 ]
-
-function VideoPanel({
-  image,
-  title,
-  duration,
-  panelId,
-  embedUrl,
-}: {
-  image: string
-  title: string
-  duration: string
-  panelId: string
-  embedUrl: string
-}) {
-  return (
-    <div className="overflow-hidden rounded-sm border border-[#e8e0d6] bg-[#f5f2eb]">
-      <input id={panelId} type="checkbox" className="peer sr-only" />
-
-      <label htmlFor={panelId} className="relative block cursor-pointer">
-        <img src={image} alt={title} className="h-auto w-full object-cover" />
-        <div className="absolute inset-0 bg-[#350944]/55" />
-        <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white">
-          <h3 className="max-w-xs text-2xl font-medium leading-tight">{title}</h3>
-          <span className="mt-5 grid h-18 w-18 place-items-center rounded-full bg-white/50 text-white">
-            <span className="ml-1 text-2xl">▶</span>
-          </span>
-          <p className="mt-3 text-2xl">{duration}</p>
-        </div>
-      </label>
-
-      <div className="pointer-events-none fixed inset-0 z-50 flex items-center justify-center bg-[#12051a]/80 p-4 opacity-0 transition-opacity duration-300 peer-checked:pointer-events-auto peer-checked:opacity-100">
-        <label htmlFor={panelId} className="absolute inset-0 cursor-pointer" aria-label={`Close ${title} video`} />
-
-        <div className="relative z-10 w-full max-w-5xl overflow-hidden rounded-lg bg-black shadow-2xl">
-          <div className="aspect-video w-full">
-            <iframe
-              src={embedUrl}
-              title={title}
-              className="h-full w-full"
-              allow="autoplay; fullscreen; picture-in-picture"
-              allowFullScreen
-              loading="lazy"
-            />
-          </div>
-
-          <div className="flex justify-end bg-[#1e0c2a] px-4 py-3">
-            <label
-              htmlFor={panelId}
-              className="cursor-pointer rounded bg-white px-4 py-2 text-sm font-semibold text-[#350944]"
-            >
-              Close video
-            </label>
-          </div>
-        </div>
-      </div>
-    </div>
-  )
-}
 
 export default function Home() {
   return (
@@ -158,8 +101,7 @@ export default function Home() {
           image="/images/change-management/video-thumbnail.webp"
           title="What is Change Management?"
           duration="2:36"
-          panelId="cm-video-intro"
-          embedUrl="https://fast.wistia.net/embed/iframe/p0bd8w9w5m?autoplay=1"
+          embedUrl="https://fast.wistia.net/embed/iframe/p0bd8w9w5m"
         />
       </section>
 
@@ -372,8 +314,7 @@ export default function Home() {
             image="/images/change-management/video-thumbnail2-desktop.webp"
             title="What is Enterprise Change Management?"
             duration="2:05"
-            panelId="cm-video-enterprise"
-            embedUrl="https://fast.wistia.net/embed/iframe/l0gbupnn08?autoplay=1"
+            embedUrl="https://fast.wistia.net/embed/iframe/l0gbupnn08"
           />
         </div>
         <p className="mt-8 text-lg leading-8">
