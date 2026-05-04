@@ -116,18 +116,17 @@ const navItems: NavItem[] = [
     label: "Resources",
     hasDropdown: true,
     dropdownItems: [
-      { label: "Podcast (UNSCRIPTED: Change Management @ Work)", href: "#" },
-      { label: "Webinars", href: "#" },
+    { label: "Podcast (UNSCRIPTED: Change Management @ Work)", href: "/resources/podcast" },
+    { label: "Webinars", href: "/resources/webinars" },
     ],
   },
   {
     label: "About Us",
     hasDropdown: true,
     dropdownItems: [
-      { label: "Contact Us", href: "#" },
-      { label: "About Prosci", href: "#" },
-      { label: "Why Choose Prosci", href: "#" },
-      { label: "Gallery", href: "#" },
+    { label: "Contact Us", href: "#" },
+    { label: "About Prosci", href: "https://www.kpintar.com/about-us.html" },
+    { label: "Gallery", href: "#" },
     ],
   },
 ]
@@ -276,16 +275,30 @@ export default function Header() {
           <nav className="hidden lg:flex items-center gap-8">
             {navItems.map((item) => {
               const hasChildren = Boolean(item.dropdownItems?.length || item.megaMenu)
+              const itemHref = item.href ?? "#"
+              const isExternalItem = typeof itemHref === "string" && (itemHref.startsWith("http") || itemHref.startsWith("https"))
+              const isInternalItem = typeof itemHref === "string" && itemHref.startsWith("/")
 
               return (
                 <div key={item.label} className="relative group">
                   {item.href && !hasChildren ? (
-                    <Link
-                      href={item.href}
-                      className="flex items-center gap-1 whitespace-nowrap rounded-sm px-1 py-0.5 text-gray-800 hover:text-[#3d1a4e] font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3d1a4e]/40"
-                    >
-                      {item.label}
-                    </Link>
+                    (item.href && (item.href.startsWith("http") || item.href.startsWith("https"))) ? (
+                      <a
+                        href={item.href}
+                        className="flex items-center gap-1 whitespace-nowrap rounded-sm px-1 py-0.5 text-gray-800 hover:text-[#3d1a4e] font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3d1a4e]/40"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {item.label}
+                      </a>
+                    ) : (
+                      <Link
+                        href={item.href}
+                        className="flex items-center gap-1 whitespace-nowrap rounded-sm px-1 py-0.5 text-gray-800 hover:text-[#3d1a4e] font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3d1a4e]/40"
+                      >
+                        {item.label}
+                      </Link>
+                    )
                   ) : (
                     <button
                       type="button"
@@ -316,15 +329,35 @@ export default function Header() {
                             <h4 className="text-[20px] leading-tight font-playfair text-[#35104b]">{column.title}</h4>
                             <div className="mt-3 border-t border-gray-500" />
                             <div className="mt-4 space-y-3">
-                              {column.items.map((subItem, index) => (
-                                <Link
-                                  key={subItem}
-                                  href="#"
-                                  className={`block rounded px-2 py-1 text-[16px] leading-snug font-playfair transition-all duration-150 hover:bg-white hover:translate-x-1 hover:text-[#3d1a4e] ${index === 0 ? "font-bold text-black" : "text-gray-900"}`}
-                                >
-                                  {subItem}
-                                </Link>
-                              ))}
+                              {column.items.map((subItem, index) => {
+                                const label = typeof subItem === "string" ? subItem : subItem.label
+                                const href = typeof subItem === "string" ? "#" : subItem.href
+                                const isExternal = typeof href === "string" && (href.startsWith("http") || href.startsWith("https"))
+                                const isInternal = typeof href === "string" && href.startsWith("/")
+                                const className = `block rounded px-2 py-1 text-[16px] leading-snug font-playfair transition-all duration-150 hover:bg-white hover:translate-x-1 hover:text-[#3d1a4e] ${index === 0 ? "font-bold text-black" : "text-gray-900"}`
+
+                                if (isExternal) {
+                                  return (
+                                    <a key={label} href={href} className={className} target="_blank" rel="noopener noreferrer">
+                                      {label}
+                                    </a>
+                                  )
+                                }
+
+                                if (isInternal) {
+                                  return (
+                                    <Link key={label} href={href} className={className}>
+                                      {label}
+                                    </Link>
+                                  )
+                                }
+
+                                return (
+                                  <a key={label} href={href} className={className}>
+                                    {label}
+                                  </a>
+                                )
+                              })}
                             </div>
                           </div>
                         ))}
@@ -334,15 +367,48 @@ export default function Header() {
                 ) : item.dropdownItems?.length ? (
                   <div className="absolute left-0 top-full pt-3 origin-top invisible opacity-0 -translate-y-2 scale-[0.98] pointer-events-none transition-all duration-200 group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 group-hover:scale-100 group-hover:pointer-events-auto group-focus-within:visible group-focus-within:opacity-100 group-focus-within:translate-y-0 group-focus-within:scale-100 group-focus-within:pointer-events-auto">
                     <div className="w-72 rounded-md border border-gray-200 bg-white shadow-lg p-2">
-                      {item.dropdownItems.map((subItem) => (
-                        <Link
-                          key={subItem.label}
-                          href={subItem.href}
-                          className="block rounded px-3 py-2 text-sm text-gray-700 transition-all duration-150 hover:bg-gray-100 hover:translate-x-1 hover:text-[#3d1a4e]"
-                        >
-                          {subItem.label}
-                        </Link>
-                      ))}
+                      {item.dropdownItems.map((subItem) => {
+                        const label = subItem.label
+                        const href = subItem.href ?? "#"
+                        const isExternal = href.startsWith("http") || href.startsWith("https")
+                        const isInternal = href.startsWith("/")
+
+                        if (isExternal) {
+                          return (
+                            <a
+                              key={label}
+                              href={href}
+                              className="block rounded px-3 py-2 text-sm text-gray-700 transition-all duration-150 hover:bg-gray-100 hover:translate-x-1 hover:text-[#3d1a4e]"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
+                              {label}
+                            </a>
+                          )
+                        }
+
+                        if (isInternal) {
+                          return (
+                            <Link
+                              key={label}
+                              href={href}
+                              className="block rounded px-3 py-2 text-sm text-gray-700 transition-all duration-150 hover:bg-gray-100 hover:translate-x-1 hover:text-[#3d1a4e]"
+                            >
+                              {label}
+                            </Link>
+                          )
+                        }
+
+                        return (
+                          <a
+                            key={label}
+                            href={href}
+                            className="block rounded px-3 py-2 text-sm text-gray-700 transition-all duration-150 hover:bg-gray-100 hover:translate-x-1 hover:text-[#3d1a4e]"
+                          >
+                            {label}
+                          </a>
+                        )
+                      })}
                     </div>
                   </div>
                 ) : null}
@@ -434,28 +500,83 @@ export default function Header() {
                           ) : null}
                         </button>
                       ) : (
-                        <Link
-                          href={item.href ?? "#"}
-                          className="flex w-full items-center justify-between px-4 py-3 text-left text-sm font-semibold text-gray-800"
-                          onClick={() => setMobileMenuOpen(false)}
-                        >
-                          <span>{item.label}</span>
-                        </Link>
+                        isExternalItem ? (
+                          <a
+                            href={itemHref}
+                            className="flex w-full items-center justify-between px-4 py-3 text-left text-sm font-semibold text-gray-800"
+                            onClick={() => setMobileMenuOpen(false)}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <span>{item.label}</span>
+                          </a>
+                        ) : isInternalItem ? (
+                          <Link
+                            href={itemHref}
+                            className="flex w-full items-center justify-between px-4 py-3 text-left text-sm font-semibold text-gray-800"
+                            onClick={() => setMobileMenuOpen(false)}
+                          >
+                            <span>{item.label}</span>
+                          </Link>
+                        ) : (
+                          <a
+                            href={itemHref}
+                            className="flex w-full items-center justify-between px-4 py-3 text-left text-sm font-semibold text-gray-800"
+                            onClick={() => setMobileMenuOpen(false)}
+                          >
+                            <span>{item.label}</span>
+                          </a>
+                        )
                       )}
 
                     {openMobileSection === item.label && item.dropdownItems?.length ? (
                       <div className="border-t border-gray-100 px-4 py-3">
                         <div className="space-y-1">
-                          {item.dropdownItems.map((subItem) => (
-                            <Link
-                              key={subItem.label}
-                              href={subItem.href}
-                              className="block rounded-md px-2 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#3d1a4e]"
-                              onClick={() => setMobileMenuOpen(false)}
-                            >
-                              {subItem.label}
-                            </Link>
-                          ))}
+                          {item.dropdownItems.map((subItem) => {
+                            const label = subItem.label
+                            const href = subItem.href ?? "#"
+                            const isExternal = href.startsWith("http") || href.startsWith("https")
+                            const isInternal = href.startsWith("/")
+
+                            if (isExternal) {
+                              return (
+                                <a
+                                  key={label}
+                                  href={href}
+                                  className="block rounded-md px-2 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#3d1a4e]"
+                                  onClick={() => setMobileMenuOpen(false)}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                >
+                                  {label}
+                                </a>
+                              )
+                            }
+
+                            if (isInternal) {
+                              return (
+                                <Link
+                                  key={label}
+                                  href={href}
+                                  className="block rounded-md px-2 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#3d1a4e]"
+                                  onClick={() => setMobileMenuOpen(false)}
+                                >
+                                  {label}
+                                </Link>
+                              )
+                            }
+
+                            return (
+                              <a
+                                key={label}
+                                href={href}
+                                className="block rounded-md px-2 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#3d1a4e]"
+                                onClick={() => setMobileMenuOpen(false)}
+                              >
+                                {label}
+                              </a>
+                            )
+                          })}
                         </div>
                       </div>
                     ) : null}
@@ -468,16 +589,34 @@ export default function Header() {
                               {column.title}
                             </p>
                             <div className="space-y-1">
-                              {column.items.map((subItem) => (
-                                <Link
-                                  key={subItem}
-                                  href="#"
-                                  className="block rounded-md px-2 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#3d1a4e]"
-                                  onClick={() => setMobileMenuOpen(false)}
-                                >
-                                  {subItem}
-                                </Link>
-                              ))}
+                              {column.items.map((subItem) => {
+                                const label = typeof subItem === "string" ? subItem : subItem.label
+                                const href = typeof subItem === "string" ? "#" : subItem.href
+                                const isExternal = typeof href === "string" && (href.startsWith("http") || href.startsWith("https"))
+                                const isInternal = typeof href === "string" && href.startsWith("/")
+
+                                if (isExternal) {
+                                  return (
+                                    <a key={label} href={href} className="block rounded-md px-2 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#3d1a4e]" onClick={() => setMobileMenuOpen(false)} target="_blank" rel="noopener noreferrer">
+                                      {label}
+                                    </a>
+                                  )
+                                }
+
+                                if (isInternal) {
+                                  return (
+                                    <Link key={label} href={href} className="block rounded-md px-2 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#3d1a4e]" onClick={() => setMobileMenuOpen(false)}>
+                                      {label}
+                                    </Link>
+                                  )
+                                }
+
+                                return (
+                                  <a key={label} href={href} className="block rounded-md px-2 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#3d1a4e]" onClick={() => setMobileMenuOpen(false)}>
+                                    {label}
+                                  </a>
+                                )
+                              })}
                             </div>
                           </div>
                         ))}
