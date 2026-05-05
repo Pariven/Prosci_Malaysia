@@ -7,7 +7,7 @@ import { ChevronDown, Globe, Menu, X, Calendar } from "lucide-react"
 
 type MegaMenuColumn = {
   title: string
-  items: string[]
+  items: (string | { label: string; href: string })[]
 }
 
 type DropdownItem = {
@@ -72,37 +72,18 @@ const navItems: NavItem[] = [
         {
           title: "Solutions For Individuals",
           items: [
-            "Certification Program",
+            { label: "Certification Program", href: "/certification-program" },
             "Membership",
-            "Training Programs",
-            "Advanced Offerings",
-            "Tools and Resources",
+            "Role-Based Certification",
           ],
         },
         {
           title: "Solutions For Organizations",
-          items: [
-            "ERP Implementations",
-            "AI Enterprise Solutions",
-            "Consulting Services",
-            "Enterprise Training",
-            "Licensing",
-            "eLearning",
-            "Speaking Engagements",
-          ],
+          items: ["Enterprise Change Management Boot Camp"],
         },
         {
           title: "Industry Insights",
-          items: [
-            "Higher Education",
-            "Government",
-            "Healthcare",
-            "Financial Services",
-            "Insurance",
-            "Information Technology",
-            "Manufacturing",
-            "Energy",
-          ],
+          items: ["Advisory Services"],
         },
       ],
     },
@@ -334,7 +315,7 @@ export default function Header() {
                                 const href = typeof subItem === "string" ? "#" : subItem.href
                                 const isExternal = typeof href === "string" && (href.startsWith("http") || href.startsWith("https"))
                                 const isInternal = typeof href === "string" && href.startsWith("/")
-                                const className = `block rounded px-2 py-1 text-[16px] leading-snug font-playfair transition-all duration-150 hover:bg-white hover:translate-x-1 hover:text-[#3d1a4e] ${index === 0 ? "font-bold text-black" : "text-gray-900"}`
+                                const className = "block rounded px-2 py-1 text-[16px] leading-snug font-playfair text-gray-900 transition-all duration-150 hover:bg-white hover:translate-x-1 hover:text-[#3d1a4e]"
 
                                 if (isExternal) {
                                   return (
@@ -479,6 +460,9 @@ export default function Header() {
               <div className="space-y-2">
                 {navItems.map((item) => {
                   const hasChildren = Boolean(item.dropdownItems?.length || item.megaMenu)
+                  const itemHref = item.href ?? "#"
+                  const isExternalItem = itemHref.startsWith("http") || itemHref.startsWith("https")
+                  const isInternalItem = itemHref.startsWith("/")
 
                   return (
                     <div key={item.label} className="rounded-xl border border-gray-200 bg-white">
@@ -499,34 +483,32 @@ export default function Header() {
                             />
                           ) : null}
                         </button>
+                      ) : isExternalItem ? (
+                        <a
+                          href={itemHref}
+                          className="flex w-full items-center justify-between px-4 py-3 text-left text-sm font-semibold text-gray-800"
+                          onClick={() => setMobileMenuOpen(false)}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <span>{item.label}</span>
+                        </a>
+                      ) : isInternalItem ? (
+                        <Link
+                          href={itemHref}
+                          className="flex w-full items-center justify-between px-4 py-3 text-left text-sm font-semibold text-gray-800"
+                          onClick={() => setMobileMenuOpen(false)}
+                        >
+                          <span>{item.label}</span>
+                        </Link>
                       ) : (
-                        isExternalItem ? (
-                          <a
-                            href={itemHref}
-                            className="flex w-full items-center justify-between px-4 py-3 text-left text-sm font-semibold text-gray-800"
-                            onClick={() => setMobileMenuOpen(false)}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            <span>{item.label}</span>
-                          </a>
-                        ) : isInternalItem ? (
-                          <Link
-                            href={itemHref}
-                            className="flex w-full items-center justify-between px-4 py-3 text-left text-sm font-semibold text-gray-800"
-                            onClick={() => setMobileMenuOpen(false)}
-                          >
-                            <span>{item.label}</span>
-                          </Link>
-                        ) : (
-                          <a
-                            href={itemHref}
-                            className="flex w-full items-center justify-between px-4 py-3 text-left text-sm font-semibold text-gray-800"
-                            onClick={() => setMobileMenuOpen(false)}
-                          >
-                            <span>{item.label}</span>
-                          </a>
-                        )
+                        <a
+                          href={itemHref}
+                          className="flex w-full items-center justify-between px-4 py-3 text-left text-sm font-semibold text-gray-800"
+                          onClick={() => setMobileMenuOpen(false)}
+                        >
+                          <span>{item.label}</span>
+                        </a>
                       )}
 
                     {openMobileSection === item.label && item.dropdownItems?.length ? (

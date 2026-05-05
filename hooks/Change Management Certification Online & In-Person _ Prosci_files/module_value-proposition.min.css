@@ -1,0 +1,1 @@
+.value-proposition{.stats-value{&.highlight{color:var(--color-heading)!important;font-size:var(--font-size-h2)!important}}.value-proposition-value{*{border:none!important;&:empty{display:none}}}h3,h3 *{font-size:var(--font-size-h5)!important}}.row-fluid-wrapper:has(>.row-fluid>.span4 .value-proposition){--container-max-width:var(--container-narrow-max-width)}
