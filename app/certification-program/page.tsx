@@ -385,10 +385,10 @@ export default function CertificationProgramPage() {
       <Header />
 
       <section
-        className="relative overflow-hidden bg-cover bg-center text-white"
-        style={{ backgroundImage: `url('${asset("Certification-program-hero_Feb-26.png")}')` }}
+        className="relative overflow-hidden bg-cover text-white"
+        style={{ backgroundImage: `url('${asset("Change management.png")}')`, backgroundPosition: 'center 30%' }}
       >
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(88,21,72,0.68),_rgba(53,12,51,0.9)_42%,_rgba(22,4,28,0.96)_100%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(88,21,72,0.42),_rgba(53,12,51,0.62)_42%,_rgba(22,4,28,0.74)_100%)]" />
         <div className="relative mx-auto max-w-6xl px-6 py-16 md:py-24">
           <div className="max-w-3xl">
             <div className="max-w-2xl">
@@ -456,38 +456,70 @@ export default function CertificationProgramPage() {
               </p>
             </div>
 
-            <div className="sticky top-6 h-fit w-full overflow-hidden rounded-[10px] bg-white text-[#3f484f] shadow-[0_20px_60px_rgba(0,0,0,0.18)]">
-            <img
-              src={asset("Certification-program-card.webp")}
-              alt="Certification program preview"
-              className="h-40 w-full object-cover"
-            />
-            <div className="border-t border-[#ece5df] px-5 py-4 md:px-6 md:py-5">
-              <p className="text-[12px] font-semibold uppercase tracking-[0.16em] text-[#5c1761]">
-                Upcoming Dates
-              </p>
-              <h3 className="mt-3 text-[26px] leading-[1.2] font-serif text-[#35104b] md:text-[28px]">
-                Change Management Certification Program
-              </h3>
-
-              <div className="mt-4 divide-y divide-[#ece5df] max-h-[400px] overflow-y-auto">
-                {upcomingDates.map((item) => (
-                  <div key={item.date} className="flex items-start justify-between gap-3 py-4">
-                    <div className="min-w-0 flex-1">
-                      <p className="text-[13px] font-semibold leading-5 text-[#3f484f]">{item.date}</p>
-                      <p className="mt-1 text-[12px] leading-4 text-[#7a7a7a]">{item.focus}</p>
-                      <p className="text-[12px] leading-4 text-[#7a7a7a]">{item.mode}</p>
-                    </div>
-                    <Link
-                      href="#"
-                      className="shrink-0 rounded bg-[#5c1761] px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.1em] text-white transition-colors hover:bg-[#451149] whitespace-nowrap"
-                    >
-                      Register
-                    </Link>
-                  </div>
-                ))}
+            <div className="w-full space-y-8">
+              <div>
+                <h2 className="text-5xl font-serif text-[#35104b] text-center md:text-6xl">
+                  Change Management Certification Program
+                </h2>
               </div>
-            </div>
+
+              <div className="grid gap-8 md:grid-cols-2">
+                {/* Face to Face Card */}
+                <div className="rounded-[10px] bg-white text-[#3f484f] shadow-[0_20px_60px_rgba(0,0,0,0.18)] p-6">
+                  <p className="text-[13px] font-semibold uppercase tracking-[0.16em] text-[#5c1761] mb-4">
+                    Face to Face
+                  </p>
+                  <h3 className="text-[28px] leading-[1.2] font-serif text-[#35104b] mb-6">
+                    In-Person Sessions
+                  </h3>
+                  <div className="space-y-4 divide-y divide-[#ece5df]">
+                    {upcomingDates
+                      .filter((item) => item.focus.includes("Face to Face"))
+                      .map((item) => (
+                        <div key={item.date} className="flex items-start justify-between gap-3 py-4 first:pt-0">
+                          <div className="min-w-0 flex-1">
+                            <p className="text-[14px] font-semibold leading-5 text-[#3f484f]">{item.date}</p>
+                            <p className="mt-1 text-[13px] leading-4 text-[#7a7a7a]">{item.mode}</p>
+                          </div>
+                          <Link
+                            href="#"
+                            className="shrink-0 rounded bg-[#5c1761] px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.1em] text-white transition-colors hover:bg-[#451149] whitespace-nowrap"
+                          >
+                            Register
+                          </Link>
+                        </div>
+                      ))}
+                  </div>
+                </div>
+
+                {/* Online Card */}
+                <div className="rounded-[10px] bg-white text-[#3f484f] shadow-[0_20px_60px_rgba(0,0,0,0.18)] p-6">
+                  <p className="text-[13px] font-semibold uppercase tracking-[0.16em] text-[#5c1761] mb-4">
+                    Online (VILT)
+                  </p>
+                  <h3 className="text-[28px] leading-[1.2] font-serif text-[#35104b] mb-6">
+                    Virtual Sessions
+                  </h3>
+                  <div className="space-y-4 divide-y divide-[#ece5df]">
+                    {upcomingDates
+                      .filter((item) => item.focus.includes("VILT"))
+                      .map((item) => (
+                        <div key={item.date} className="flex items-start justify-between gap-3 py-4 first:pt-0">
+                          <div className="min-w-0 flex-1">
+                            <p className="text-[14px] font-semibold leading-5 text-[#3f484f]">{item.date}</p>
+                            <p className="mt-1 text-[13px] leading-4 text-[#7a7a7a]">{item.mode}</p>
+                          </div>
+                          <Link
+                            href="#"
+                            className="shrink-0 rounded bg-[#5c1761] px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.1em] text-white transition-colors hover:bg-[#451149] whitespace-nowrap"
+                          >
+                            Register
+                          </Link>
+                        </div>
+                      ))}
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -734,9 +766,13 @@ export default function CertificationProgramPage() {
               />
               <div className="text-lg font-medium">Program Details</div>
             </div>
-            <StaticButton className="rounded-sm border-2 border-white px-6 py-2 text-xs font-semibold uppercase">
+            <a 
+              href={asset("Prosci-Certification-Datasheet.pdf")} 
+              download 
+              className="rounded-sm border-2 border-white px-6 py-2 text-xs font-semibold uppercase inline-flex items-center justify-center hover:bg-white hover:text-[#3d1a4e] transition-colors"
+            >
               Download
-            </StaticButton>
+            </a>
           </div>
         </div>
       </section>

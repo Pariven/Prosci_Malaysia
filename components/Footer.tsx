@@ -5,21 +5,16 @@ const footerLinks = {
   changeManagement: {
     title: "CHANGE MANAGEMENT",
     links: [
-      "What is Change Management",
-      "Why Change Management",
-      "Change Success",
-      "Change Saturation",
-      "Change Fatigue",
-      "Change Readiness",
-      "Change Resistance",
+      { label: "What is Change Management", href: "/change-management/what-is-change-management" },
+      { label: "Why is Change Management", href: "/change-management/why-change-management" },
     ],
   },
   methodology: {
     title: "METHODOLOGY",
     links: [
       { label: "Prosci Methodology Overview", href: "/methodology-overview" },
-      { label: "Prosci PCT Model", href: "/methodology/pct-model" },
-      { label: "Prosci ADKAR Model", href: "/methodology/adkar" },
+      { label: "PCT Model", href: "/methodology/pct-model" },
+      { label: "ADKAR Model", href: "/methodology/adkar" },
       { label: "Prosci 3-Phase Process", href: "/methodology/3-phase-process" },
     ],
   },
@@ -27,27 +22,23 @@ const footerLinks = {
     title: "SOLUTIONS",
     sections: [
       {
-        subtitle: "Solutions Overview",
-        links: [],
-      },
-      {
         subtitle: "For Individuals",
         links: [
-          "Certification Program",
+          { label: "Certification Program", href: "/certification-program" },
           "Membership",
-          "Training Programs",
-          "Advanced Offerings",
-          "Tools and Resources",
+          "Role-Based Certification",
         ],
       },
       {
         subtitle: "For Organizations",
         links: [
-          "ERP Implementations",
-          "AI Enterprise Solutions",
-          "Enterprise Training",
-          "Consulting Services",
-          "Licensing",
+          "Enterprise Change Management Boot Camp",
+        ],
+      },
+      {
+        subtitle: "Industry Insights",
+        links: [
+          "Advisory Services",
         ],
       },
     ],
@@ -55,33 +46,17 @@ const footerLinks = {
   resources: {
     title: "RESOURCES",
     links: [
-      "Overview",
-      "Prosci Blog",
-      "Live and On-Demand Webinars",
-      "Podcasts",
-      "Research Insights, Worksheets, and More",
-      "Case Studies",
-      "Research Opportunities",
+      { label: "Podcast (UNSCRIPTED: Change Management @ Work)", href: "/resources/podcast" },
+      { label: "Webinars", href: "/resources/webinars" },
     ],
-    additional: ["PROSCI STORE", "PROSCI PORTAL"],
   },
   aboutUs: {
     title: "ABOUT US",
     links: [
-      "Contact Us",
-      "About Prosci",
-      "Why Choose Prosci",
-      "Our Team",
-      "Global Coverage",
-      "Research Process",
-      "Sustainability, Impact, Belonging",
-      "Newsroom",
-      "Careers",
+      { label: "Contact Us", href: "#" },
+      { label: "About Prosci", href: "https://www.kpintar.com/about-us.html" },
+      { label: "Gallery", href: "#" },
     ],
-  },
-  legal: {
-    title: "LEGAL",
-    links: ["Trust Center", "Privacy Policy", "Data Security Overview"],
   },
 }
 
@@ -105,14 +80,17 @@ export default function Footer() {
             <ul className="space-y-2">
               {footerLinks.changeManagement.links.map((link, index) => (
                 <li key={index}>
-                  <Link href="#" className="text-gray-300 text-sm hover:text-white transition-colors">
-                    {link}
+                  <Link href={link.href} className="text-gray-300 text-sm hover:text-white transition-colors">
+                    {link.label}
                   </Link>
                 </li>
               ))}
             </ul>
-            
-            <h3 className="font-semibold text-sm tracking-wider mt-8 mb-4">
+          </div>
+
+          {/* Methodology */}
+          <div>
+            <h3 className="font-semibold text-sm tracking-wider mb-4">
               {footerLinks.methodology.title}
             </h3>
             <ul className="space-y-2">
@@ -133,18 +111,20 @@ export default function Footer() {
             </h3>
             {footerLinks.solutions.sections.map((section, sIndex) => (
               <div key={sIndex} className="mb-4">
-                <Link href="#" className="text-gray-300 text-sm hover:text-white transition-colors">
-                  {section.subtitle}
-                </Link>
+                <h4 className="text-gray-300 text-sm font-medium mb-2">{section.subtitle}</h4>
                 {section.links.length > 0 && (
-                  <ul className="mt-2 space-y-2 ml-2">
-                    {section.links.map((link, index) => (
-                      <li key={index}>
-                        <Link href="#" className="text-gray-400 text-sm hover:text-white transition-colors">
-                          {link}
-                        </Link>
-                      </li>
-                    ))}
+                  <ul className="space-y-1 ml-2">
+                    {section.links.map((link, index) => {
+                      const href = typeof link === 'string' ? '#' : link.href
+                      const label = typeof link === 'string' ? link : link.label
+                      return (
+                        <li key={index}>
+                          <Link href={href} className="text-gray-400 text-sm hover:text-white transition-colors">
+                            {label}
+                          </Link>
+                        </li>
+                      )
+                    })}
                   </ul>
                 )}
               </div>
@@ -159,21 +139,12 @@ export default function Footer() {
             <ul className="space-y-2">
               {footerLinks.resources.links.map((link, index) => (
                 <li key={index}>
-                  <Link href="#" className="text-gray-300 text-sm hover:text-white transition-colors">
-                    {link}
+                  <Link href={link.href} className="text-gray-300 text-sm hover:text-white transition-colors">
+                    {link.label}
                   </Link>
                 </li>
               ))}
             </ul>
-            <div className="mt-6 space-y-2">
-              {footerLinks.resources.additional.map((link, index) => (
-                <div key={index}>
-                  <Link href="#" className="font-semibold text-sm tracking-wider hover:text-gray-300 transition-colors">
-                    {link}
-                  </Link>
-                </div>
-              ))}
-            </div>
           </div>
 
           {/* About Us */}
@@ -184,24 +155,8 @@ export default function Footer() {
             <ul className="space-y-2">
               {footerLinks.aboutUs.links.map((link, index) => (
                 <li key={index}>
-                  <Link href="#" className="text-gray-300 text-sm hover:text-white transition-colors">
-                    {link}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Legal */}
-          <div>
-            <h3 className="font-semibold text-sm tracking-wider mb-4">
-              {footerLinks.legal.title}
-            </h3>
-            <ul className="space-y-2">
-              {footerLinks.legal.links.map((link, index) => (
-                <li key={index}>
-                  <Link href="#" className="text-gray-300 text-sm hover:text-white transition-colors">
-                    {link}
+                  <Link href={link.href} className="text-gray-300 text-sm hover:text-white transition-colors">
+                    {link.label}
                   </Link>
                 </li>
               ))}
