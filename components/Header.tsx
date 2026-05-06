@@ -105,7 +105,7 @@ const navItems: NavItem[] = [
     label: "About Us",
     hasDropdown: true,
     dropdownItems: [
-    { label: "Contact Us", href: "#" },
+    { label: "Contact Us", href: "/contact-us" },
     { label: "About Prosci", href: "https://www.kpintar.com/about-us.html" },
     { label: "Gallery", href: "#" },
     ],

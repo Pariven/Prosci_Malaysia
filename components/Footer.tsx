@@ -53,7 +53,7 @@ const footerLinks = {
   aboutUs: {
     title: "ABOUT US",
     links: [
-      { label: "Contact Us", href: "#" },
+      { label: "Contact Us", href: "/contact-us" },
       { label: "About Prosci", href: "https://www.kpintar.com/about-us.html" },
       { label: "Gallery", href: "#" },
     ],
