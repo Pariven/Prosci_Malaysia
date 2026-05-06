@@ -74,7 +74,7 @@ const navItems: NavItem[] = [
           items: [
             { label: "Certification Program", href: "/certification-program" },
             "Membership",
-            "Role-Based Certification",
+            { label: "Role-Based Certification", href: "/role-based-certification" },
           ],
         },
         {

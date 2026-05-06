@@ -679,35 +679,7 @@ export default function CertificationProgramPage() {
         </div>
       </section>
 
-      <section className="bg-[#3f484f] px-6 py-12 text-white">
-        <div className="mx-auto max-w-6xl">
-          <h3 className="text-center text-xl font-medium">Helpful Resources</h3>
-          <div className="mt-8 grid gap-6 md:grid-cols-2">
-            <div className="flex items-center gap-5 rounded-lg bg-gradient-to-br from-[#ddebeb] to-[#f5f2eb] p-6">
-              <img
-                src={asset("CM-Certification-thumb.png")}
-                alt="The program at a glance"
-                className="h-24 w-20 rounded-md shadow"
-              />
-              <div>
-                <p className="text-lg font-semibold text-[#025c67]">The program at a glance</p>
-                <p className="mt-2 text-sm text-[#836434]">Download datasheet</p>
-              </div>
-            </div>
-            <div className="flex items-center gap-5 rounded-lg bg-gradient-to-br from-[#ddebeb] to-[#f5f2eb] p-6">
-              <img
-                src={asset("Get-support-thumb.png")}
-                alt="Get approval to attend"
-                className="h-24 w-20 rounded-md shadow"
-              />
-              <div>
-                <p className="text-lg font-semibold text-[#025c67]">Get approval to attend</p>
-                <p className="mt-2 text-sm text-[#836434]">View our blog article</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Helpful Resources section removed per request */}
 
       <section className="bg-white px-6 py-16">
         <div className="mx-auto max-w-6xl">
@@ -767,7 +739,7 @@ export default function CertificationProgramPage() {
               <div className="text-lg font-medium">Program Details</div>
             </div>
             <a 
-              href={asset("Prosci-Certification-Datasheet.pdf")} 
+              href="/pdf/Change%20Management%20Certification%20Program.pdf" 
               download 
               className="rounded-sm border-2 border-white px-6 py-2 text-xs font-semibold uppercase inline-flex items-center justify-center hover:bg-white hover:text-[#3d1a4e] transition-colors"
             >
@@ -777,39 +749,7 @@ export default function CertificationProgramPage() {
         </div>
       </section>
 
-      <section className="bg-gradient-to-br from-[#f5f2eb] to-[#ddebeb] px-6 py-16">
-        <div className="mx-auto max-w-6xl">
-          <h2 className="text-center text-3xl font-light">Course Overview</h2>
-          <div className="mt-10 grid gap-6 md:grid-cols-3">
-            {courseOverview.map((day) => (
-              <div key={day.day} className="rounded-lg bg-white p-8 shadow">
-                <h3 className="text-center text-xl font-medium text-[#025c67]">{day.day}</h3>
-                <p className="mt-4 text-sm font-semibold text-[#3f484f]">{day.label}</p>
-                <ul className="mt-3 list-disc space-y-2 pl-5 text-sm text-[#3f484f]">
-                  {day.items.map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-          <div className="mt-12 flex flex-wrap items-center justify-center gap-8">
-            <p className="max-w-sm text-center text-sm text-[#3f484f]">
-              Credits from the following organizations are available by completing this program:
-            </p>
-            <div className="flex flex-wrap items-center justify-center gap-8">
-              {credits.map((logo) => (
-                <img
-                  key={logo.name}
-                  src={asset(logo.file)}
-                  alt={logo.name}
-                  className="h-12 w-auto"
-                />
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Course Overview section removed per request */}
 
       <section className="bg-white px-6 py-16">
         <div className="mx-auto grid max-w-6xl items-center gap-10 md:grid-cols-2">
