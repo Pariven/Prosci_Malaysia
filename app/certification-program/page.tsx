@@ -3,6 +3,7 @@ import Link from "next/link"
 import Header from "@/components/Header"
 import Footer from "@/components/Footer"
 import VideoPanel from "@/components/VideoPanel"
+import HashScroller from "@/components/HashScroller"
 
 const asset = (fileName: string) => `/certification-program/${encodeURIComponent(fileName)}`
 
@@ -357,6 +358,7 @@ export default function CertificationProgramPage() {
   return (
     <main className="min-h-screen bg-white text-[#3f484f]">
       <Header />
+      <HashScroller />
 
       <section
         id="change-management"
