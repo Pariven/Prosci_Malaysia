@@ -439,7 +439,7 @@ export default function CertificationProgramPage() {
                   Change Management Certification Program
                 </h2>
                 <p className="mt-4 text-base font-semibold text-[#666666] text-center md:text-lg">
-                  18 - 20 May 2026 | Face to Face | Kuala Lumpur
+                  Upcoming training date
                 </p>
               </div>
 
