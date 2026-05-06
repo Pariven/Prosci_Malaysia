@@ -457,7 +457,7 @@ export default function CertificationProgramPage() {
                           </div>
                           <Link
                             href="#"
-                            className="shrink-0 rounded bg-[#5c1761] px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.1em] text-white transition-colors hover:bg-[#451149] whitespace-nowrap"
+                            className="shrink-0 rounded bg-[#5c1761] px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.1em] text-white transition-colors hover:bg-[#CCCCFF] whitespace-nowrap"
                           >
                             Register
                           </Link>
@@ -485,7 +485,7 @@ export default function CertificationProgramPage() {
                           </div>
                           <Link
                             href="#"
-                            className="shrink-0 rounded bg-[#5c1761] px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.1em] text-white transition-colors hover:bg-[#451149] whitespace-nowrap"
+                            className="shrink-0 rounded bg-[#5c1761] px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.1em] text-white transition-colors hover:bg-[#CCCCFF] whitespace-nowrap"
                           >
                             Register
                           </Link>
@@ -715,7 +715,7 @@ export default function CertificationProgramPage() {
             <a 
               href="/pdf/Change%20Management%20Certification%20Program.pdf" 
               download 
-              className="rounded-sm border-2 border-white px-6 py-2 text-xs font-semibold uppercase inline-flex items-center justify-center hover:bg-white hover:text-[#3d1a4e] transition-colors"
+              className="rounded-sm border-2 border-white px-6 py-2 text-xs font-semibold uppercase inline-flex items-center justify-center hover:bg-[#CCCCFF] hover:text-[#3d1a4e] transition-colors"
             >
               Download
             </a>
