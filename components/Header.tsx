@@ -197,7 +197,7 @@ export default function Header() {
       <div className="hidden lg:block bg-white border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-end gap-4 py-2 text-sm">
-            <Link href="#" className="flex items-center gap-2 bg-[#3d1a4e] text-white px-4 py-2 rounded hover:bg-[#2d1339] transition-colors">
+            <Link href="/certification-program#change-management" className="flex items-center gap-2 bg-[#3d1a4e] text-white px-4 py-2 rounded hover:bg-[#2d1339] transition-colors">
               <Calendar className="w-4 h-4" />
               <span>Training</span>
             </Link>
