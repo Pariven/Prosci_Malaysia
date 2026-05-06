@@ -66,7 +66,7 @@ export default function ContactUsPage() {
       <section
         className="relative overflow-hidden bg-cover text-white"
         style={{
-          backgroundImage: `url('/certification-program/APIimage%20v2.webp')`,
+          backgroundImage: `url('/Engaged-business-meeting-1_Feb-26.webp')`,
           backgroundPosition: 'center 30%',
         }}
       >
