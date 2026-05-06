@@ -33,9 +33,9 @@ export default function WhatsAppButton() {
   return (
     <div className={styles.container}>
       <a
-        href="/contact-us"
-        aria-label="Schedule"
-        title="Schedule"
+        href="/certification-program#change-management"
+        aria-label="Change Management Certification Program"
+        title="Change Management Certification Program"
         className={`${styles.button} ${styles.calendarIcon}`}
       >
         <svg className={styles.icon} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
