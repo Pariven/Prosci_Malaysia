@@ -1,4 +1,4 @@
-import type { ReactNode } from "react"
+﻿import type { ReactNode } from "react"
 import Link from "next/link"
 import Header from "@/components/Header"
 import Footer from "@/components/Footer"
@@ -183,7 +183,7 @@ const timeRequirements = [
   },
 ]
 
-/* Course overview removed — data cleaned up. */
+/* Course overview removed â€” data cleaned up. */
 
 
 const credits = [
@@ -369,9 +369,12 @@ export default function CertificationProgramPage() {
         <div className="relative mx-auto max-w-6xl px-6 py-16 md:py-24">
           <div className="max-w-3xl">
             <div className="max-w-2xl">
-              <h1 className="text-4xl font-light leading-tight md:text-5xl">
+                            <h1 className="text-4xl font-light leading-tight md:text-5xl">
                 Change Management Certification Program
               </h1>
+              <p className="mt-3 text-lg font-medium text-white/90 md:text-xl">
+                Prosci role based certification
+              </p>
               <p className="mt-8 text-base leading-7 md:text-lg">
                 Become a Prosci Certified Change Practitioner and help your organization successfully
                 navigate complex transformations. Our research-based course equips you with proven
@@ -808,3 +811,5 @@ export default function CertificationProgramPage() {
     </main>
   )
 }
+
+
