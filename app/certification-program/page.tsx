@@ -372,9 +372,6 @@ export default function CertificationProgramPage() {
               <h1 className="text-4xl font-light leading-tight md:text-5xl">
                 Change Management Certification Program
               </h1>
-              <p className="mt-4 text-sm font-semibold text-white md:text-base">
-                Prosci role based certification
-              </p>
               <p className="mt-8 text-base leading-7 md:text-lg">
                 Become a Prosci Certified Change Practitioner and help your organization successfully
                 navigate complex transformations. Our research-based course equips you with proven
@@ -441,6 +438,9 @@ export default function CertificationProgramPage() {
                 <h2 className="text-5xl font-serif text-[#35104b] text-center md:text-6xl">
                   Change Management Certification Program
                 </h2>
+                <p className="mt-4 text-sm font-semibold text-[#35104b] text-center md:text-base">
+                  Prosci role based certification
+                </p>
               </div>
 
               <div className="grid gap-8 md:grid-cols-2">
