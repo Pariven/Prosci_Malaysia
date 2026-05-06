@@ -1,23 +1,23 @@
-.button {
+﻿.button {
   display: inline-block;
   transition: all 0.2s ease-in;
   position: relative;
   overflow: hidden;
   z-index: 999;
   color: #090909;
-  padding: 0.7em 3.3em 0.7em 1.7em;
-  font-size: 18px;
-  border-radius: 0.5em;
+  padding: 0.55em 2.6em 0.55em 1.35em;
+  font-size: 16px;
+  border-radius: 0.45em;
   background: #e8e8e8;
   border: 1px solid #e8e8e8;
   text-decoration: none;
 }
 
 .icon {
-  height: 24px;
-  width: 24px;
+  height: 20px;
+  width: 20px;
   position: absolute;
-  right: 12px;
+  right: 10px;
   top: 50%;
   transform: translateY(-50%);
 }
@@ -37,11 +37,11 @@
 
 .container {
   position: fixed;
-  right: 30px;
-  bottom: 30px;
+  right: 24px;
+  bottom: 24px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 8px;
   z-index: 999;
   align-items: flex-end;
 }
@@ -57,8 +57,8 @@
   color: #fff;
   border-color: #35104b;
   z-index: 1001;
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
   padding: 0;
   border-radius: 9999px;
   display: inline-flex;
@@ -67,8 +67,8 @@
 }
 
 .calendarIcon .icon {
-  height: 20px;
-  width: 20px;
+  height: 18px;
+  width: 18px;
   position: static;
   right: auto;
   top: auto;
