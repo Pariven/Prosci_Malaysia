@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   description: 'Prosci Approved Partner - KPINTAR enhancing capability. Drive successful change in your organization with proven change management methodology.',
   generator: 'v0.app',
   icons: {
-    icon: '/ChatGPT Image May 7, 2026, 05_48_32 AM.png',
+    icon: '/ChatGPT Image May 7, 2026, 05_52_23 AM.png',
     apple: '/apple-icon.png',
   },
 }

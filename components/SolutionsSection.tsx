@@ -81,10 +81,10 @@ export default function SolutionsSection() {
 
         <div className="text-center">
           <Link
-            href="#solutions"
+            href="/certification-program#change-management"
             className="inline-flex items-center px-6 py-3 bg-[#3d1a4e] text-white font-semibold rounded hover:bg-[#2d1339] transition-colors uppercase tracking-wide"
           >
-            See Enterprise Solutions
+            Discover Our Solution
           </Link>
         </div>
       </div>

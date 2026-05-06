@@ -26,7 +26,7 @@ export default function HeroSection() {
             We help organizations turn complex change into something people understand—so they can act with confidence and deliver results. Because that&apos;s change done right.
           </p>
           <Link
-            href="#solutions"
+            href="/certification-program#change-management"
             className="inline-flex items-center px-6 py-3 bg-[#3d1a4e] text-white font-semibold text-sm tracking-wide hover:bg-[#2d1339] transition-colors"
           >
             DISCOVER OUR SOLUTIONS
