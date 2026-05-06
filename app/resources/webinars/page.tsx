@@ -9,7 +9,7 @@ export default function WebinarsComingSoon() {
       <section
         className="relative overflow-hidden bg-cover text-white"
         style={{
-          backgroundImage: `url('/images/Enterprise-Feature-Image-1.webp')`,
+          backgroundImage: `url('/images/hero-bg.png')`,
           backgroundPosition: 'center',
         }}
       >
