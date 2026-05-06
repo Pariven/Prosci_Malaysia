@@ -20,11 +20,11 @@ const footerLinks = {
   },
   solutions: {
     title: "SOLUTIONS",
-    sections: [
+        sections: [
       {
         subtitle: "For Individuals",
         links: [
-          { label: "Certification Program", href: "/certification-program" },
+          { label: "Certification Program", href: "/certification-program#change-management" },
           "Membership",
           { label: "Role-Based Certification", href: "/role-based-certification" },
         ],

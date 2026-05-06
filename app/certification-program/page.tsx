@@ -359,6 +359,7 @@ export default function CertificationProgramPage() {
       <Header />
 
       <section
+        id="change-management"
         className="relative overflow-hidden bg-cover text-white"
         style={{ backgroundImage: `url('${asset("Change management.png")}')`, backgroundPosition: 'center 30%' }}
       >
