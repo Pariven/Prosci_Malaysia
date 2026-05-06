@@ -182,34 +182,8 @@ const timeRequirements = [
   },
 ]
 
-const courseOverview = [
-  {
-    day: "Day 1",
-    label: "Foundation and Individual Change:",
-    items: [
-      "PCT Model",
-      "ADKAR Model",
-      "Prosci 3-Phase Process: Phase 1 - Prepare Approach",
-    ],
-  },
-  {
-    day: "Day 2",
-    label: "Organizational Change Management:",
-    items: [
-      "Prosci 3-Phase Process: Phase 1 - Prepare Approach",
-      "Prosci 3-Phase Process: Phase 2 - Manage Change",
-    ],
-  },
-  {
-    day: "Day 3",
-    label: "Sustainment and Application:",
-    items: [
-      "Prosci 3-Phase Process: Phase 2 - Manage Change",
-      "Prosci 3-Phase Process: Phase 3 - Sustain Outcomes",
-      "Deliver Presentations",
-    ],
-  },
-]
+/* Course overview removed — data cleaned up. */
+
 
 const credits = [
   { name: "ACMP QEP", file: "ACMP QEP logo.png" },
