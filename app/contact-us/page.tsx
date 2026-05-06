@@ -63,15 +63,24 @@ export default function ContactUsPage() {
     <main className="min-h-screen bg-white text-[#3f484f]">
       <Header />
 
-      <section className="relative overflow-hidden bg-cover text-white" style={{ backgroundColor: '#f5f2eb' }}>
+      <section
+        className="relative overflow-hidden bg-cover text-white"
+        style={{
+          backgroundImage: `url('/certification-program/APIimage%20v2.webp')`,
+          backgroundPosition: 'center 30%',
+        }}
+      >
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(88,21,72,0.42),_rgba(53,12,51,0.62)_42%,_rgba(22,4,28,0.74)_100%)]" />
         <div className="relative mx-auto max-w-6xl px-6 py-16 md:py-24">
-          <h1 className="text-4xl font-light leading-tight text-[#3f484f] md:text-5xl">
-            Get in Touch
-          </h1>
-          <p className="mt-6 text-lg leading-7 text-[#666666]">
-            Have questions about our certification programs? We're here to help. Fill out the form below
-            and we'll connect you with the right team.
-          </p>
+          <div className="max-w-3xl">
+            <h1 className="text-4xl font-light leading-tight md:text-5xl">
+              Get in Touch
+            </h1>
+            <p className="mt-8 text-base leading-7 md:text-lg">
+              Have questions about our certification programs? We're here to help. Fill out the form below
+              and we'll connect you with the right team.
+            </p>
+          </div>
         </div>
       </section>
 
