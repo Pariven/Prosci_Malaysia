@@ -71,7 +71,7 @@ export default function ContactUsPage() {
         }}
       >
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(88,21,72,0.42),_rgba(53,12,51,0.62)_42%,_rgba(22,4,28,0.74)_100%)]" />
-        <div className="relative mx-auto max-w-6xl px-6 py-16 md:py-24">
+        <div className="relative mx-auto max-w-6xl px-6 py-32 md:py-48">
           <div className="max-w-3xl">
             <h1 className="text-4xl font-light leading-tight md:text-5xl">
               Get in Touch
