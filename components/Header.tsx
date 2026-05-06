@@ -106,7 +106,7 @@ const navItems: NavItem[] = [
     hasDropdown: true,
     dropdownItems: [
     { label: "Contact Us", href: "/contact-us" },
-    { label: "About Prosci", href: "https://www.kpintar.com/about-us.html" },
+    { label: "About Prosci Malaysia", href: "https://www.kpintar.com/about-us.html" },
     { label: "Gallery", href: "#" },
     ],
   },
