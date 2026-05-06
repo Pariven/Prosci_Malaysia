@@ -160,18 +160,18 @@ export default function Header() {
 
   useEffect(() => {
     const handleOutsideClick = (event: MouseEvent) => {
-            {
-            title: "Solutions",
-            ctaText: "Learn more",
-            columns: [
-        {
-          title: "Solutions For Individuals",
-          items: [
-            { label: "Certification Program", href: "/certification-program#change-management" },
-            "Membership",
-            { label: "Role-Based Certification", href: "/role-based-certification" },
-          ],
-        },
+      if (
+        languageMenuRef.current &&
+        !languageMenuRef.current.contains(event.target as Node)
+      ) {
+        setIsLanguageMenuOpen(false)
+      }
+    }
+
+    document.addEventListener("mousedown", handleOutsideClick)
+    return () => {
+      document.removeEventListener("mousedown", handleOutsideClick)
+    }
   }, [])
 
   const setGoogleTranslateCookie = (targetLanguage: LanguageCode) => {
