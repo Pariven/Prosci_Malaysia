@@ -34,24 +34,39 @@ export default function ContactUsPage() {
     e.preventDefault()
     setIsSubmitting(true)
     setSubmitStatus('idle')
-
     try {
-      // Simulate form submission
-      await new Promise((resolve) => setTimeout(resolve, 1000))
-      setSubmitStatus('success')
-      setFormData({
-        firstName: '',
-        lastName: '',
-        email: '',
-        jobTitle: '',
-        organization: '',
-        phone: '',
-        jobLevel: '',
-        industry: '',
-        country: '',
-        reasonForContact: '',
-        comments: '',
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
       })
+
+      const result = await res.json()
+
+      if (res.ok && result.ok) {
+        setSubmitStatus('success')
+        setFormData({
+          firstName: '',
+          lastName: '',
+          email: '',
+          jobTitle: '',
+          organization: '',
+          phone: '',
+          jobLevel: '',
+          industry: '',
+          country: '',
+          reasonForContact: '',
+          comments: '',
+        })
+      } else if (result?.error === 'SMTP_NOT_CONFIGURED') {
+        // Fallback: open user's email client with mailto to enquiry@kpintar.com
+        const subject = encodeURIComponent(`Website Contact: ${formData.reasonForContact || 'Inquiry'}`)
+        const body = encodeURIComponent(`Name: ${formData.firstName} ${formData.lastName}\nEmail: ${formData.email}\nOrganization: ${formData.organization}\nPhone: ${formData.phone}\n\nComments:\n${formData.comments}`)
+        window.location.href = `mailto:enquiry@kpintar.com?subject=${subject}&body=${body}`
+        setSubmitStatus('success')
+      } else {
+        setSubmitStatus('error')
+      }
     } catch (error) {
       setSubmitStatus('error')
     } finally {
