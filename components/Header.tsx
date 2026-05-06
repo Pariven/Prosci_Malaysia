@@ -69,12 +69,12 @@ const navItems: NavItem[] = [
       title: "Solutions",
       ctaText: "Learn more",
       columns: [
-        {
+                {
           title: "Solutions For Individuals",
           items: [
             { label: "Certification Program", href: "/certification-program" },
-            "Membership",
             { label: "Role-Based Certification", href: "/role-based-certification" },
+            "Membership",
           ],
         },
         {
@@ -615,4 +615,7 @@ export default function Header() {
     </header>
   )
 }
+
+
+
 
