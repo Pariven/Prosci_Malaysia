@@ -438,7 +438,7 @@ export default function CertificationProgramPage() {
                 <h2 className="text-5xl font-serif text-[#35104b] text-center md:text-6xl">
                   Change Management Certification Program
                 </h2>
-                <p className="mt-4 text-sm font-semibold text-[#35104b] text-center md:text-base">
+                <p className="mt-4 text-base font-semibold text-[#666666] text-center md:text-lg">
                   Prosci role based certification
                 </p>
               </div>
