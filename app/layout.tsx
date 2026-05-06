@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Playfair_Display, Inter } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
+import WhatsAppButton from '@/components/WhatsAppButton'
 import './globals.css'
 
 const playfair = Playfair_Display({ 
@@ -47,6 +48,7 @@ export default function RootLayout({
     <html lang="en" className={`${playfair.variable} ${inter.variable} bg-background`} suppressHydrationWarning>
       <body className="font-sans antialiased">
         {children}
+         <WhatsAppButton />
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
     </html>
