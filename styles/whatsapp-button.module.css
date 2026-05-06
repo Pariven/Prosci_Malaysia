@@ -84,7 +84,7 @@
   right: 30px;
   bottom: 30px;
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
   gap: 12px;
   z-index: 999;
   align-items: flex-end;
@@ -94,7 +94,27 @@
   background: #35104b;
   color: #fff;
   border-color: #35104b;
+}
+
+.calendarIcon {
+  background: #35104b;
+  color: #fff;
+  border-color: #35104b;
   z-index: 1001;
-  padding-left: 1.2em;
-  padding-right: 2.6em;
+  width: 44px;
+  height: 44px;
+  padding: 0.4rem;
+  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.calendarIcon .icon {
+  height: 20px;
+  width: 20px;
+  position: static;
+  right: auto;
+  top: auto;
+  transform: none;
 }

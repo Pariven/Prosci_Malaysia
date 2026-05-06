@@ -34,13 +34,13 @@ export default function WhatsAppButton() {
     <div className={styles.container}>
       <a
         href="/contact-us"
-        aria-label="Schedule a meeting"
-        className={`${styles.button} ${styles.calendar}`}
+        aria-label="Schedule"
+        title="Schedule"
+        className={`${styles.button} ${styles.calendarIcon}`}
       >
-        <span className={styles.label}>Schedule</span>
-        <svg className={styles.icon} viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-          <path d="M7 10h5v5H7z" />
-          <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-1.99.9-1.99 2L3 20c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z" />
+        <svg className={styles.icon} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+          <path d="M7 11h5v5H7z" fill="currentColor" />
+          <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zM19 20H5V9h14v11z" fill="currentColor" />
         </svg>
       </a>
 
