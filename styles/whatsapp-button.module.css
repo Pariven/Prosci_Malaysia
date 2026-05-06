@@ -101,10 +101,10 @@
   color: #fff;
   border-color: #35104b;
   z-index: 1001;
-  width: 44px;
-  height: 44px;
-  padding: 0.4rem;
-  border-radius: 10px;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border-radius: 9999px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
