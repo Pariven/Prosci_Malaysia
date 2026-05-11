@@ -168,17 +168,6 @@ export default function Home() {
         </p>
       </section>
 
-      <section className="mx-auto max-w-[1000px] px-6 py-10">
-        <Link
-          href="https://www.prosci.com/resources/articles/core-roles-in-change-management"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Open The Difference Between Change and Change Done Right"
-        >
-          <img src="/images/change-management/interactive-210175664242.png" alt="The Difference Between Change and Change Done Right" className="w-full" />
-        </Link>
-      </section>
-
       <section id="why-change-management" className="mx-auto max-w-[1100px] px-6 py-16 md:py-24">
         <h2 className="font-serif text-4xl text-[#350944] md:text-5xl">Why Change Management?</h2>
         <div className="mt-10 grid gap-8 md:grid-cols-2 md:gap-12">
@@ -279,30 +268,6 @@ export default function Home() {
         <img src="/images/change-management/Group-conversation-2_Feb-26.webp" alt="Group discussion" className="w-full" />
       </section>
 
-      <section className="bg-[#f5f2eb] px-6 py-16">
-        <div className="mx-auto max-w-[900px] text-center">
-          <h4 className="font-serif text-3xl text-[#350944] md:text-4xl">
-            Subscribe to our bi-weekly blog to receive articles that help you, your team and your organization grow
-            stronger from change.
-          </h4>
-          <div className="mx-auto mt-8 max-w-[420px] border border-[#b4b2ad] bg-white px-4 py-3 text-left text-[#7b7b7b]">
-            Subscribe to email*
-          </div>
-          <p className="mx-auto mt-4 max-w-[560px] text-left text-sm leading-6">
-            By submitting your contact information above, you allow Prosci to contact you about relevant content,
-            products, and services. You may unsubscribe from these communications at anytime.
-          </p>
-          <Link
-            href="https://www.prosci.com/resources"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-8 inline-block bg-[#350944] px-8 py-3 text-sm font-semibold tracking-wide text-white"
-          >
-            SUBMIT
-          </Link>
-        </div>
-      </section>
-
       <section className="mx-auto max-w-[1100px] px-6 py-16 md:py-24">
         <h2 className="font-serif text-4xl text-[#350944] md:text-5xl">Building change capability</h2>
         <p className="mt-6 max-w-4xl text-lg leading-8">
@@ -336,17 +301,6 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
-
-      <section className="mx-auto max-w-[1000px] px-6 pb-16">
-        <Link
-          href="https://www.prosci.com/resources/webinars/five-tenets-of-change-management"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Assess your organization's change readiness"
-        >
-          <img src="/images/change-management/interactive-210175664795.png" alt="Assess your organization's change readiness" className="w-full" />
-        </Link>
       </section>
 
       <section id="change-management-process" className="mx-auto max-w-[1100px] px-6 py-16 md:py-24">
@@ -447,9 +401,7 @@ export default function Home() {
               you the proven tools and process to lead successful change.
             </p>
             <Link
-              href="https://www.prosci.com/solutions/training-programs/change-management-certification-program"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/certification-program"
               className="mt-8 inline-block bg-[#350944] px-8 py-3 text-sm font-semibold uppercase tracking-wide text-white"
             >
               Get certified

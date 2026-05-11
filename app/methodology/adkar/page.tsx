@@ -16,7 +16,7 @@ const resources = [
   {
     id: "blog",
     label: "ADKAR in the Blog",
-    icon: "https://www.prosci.com/hubfs/icon-book-damsen.svg",
+    icon: "/icon-dark-32x32.png",
     items: [
       {
         label: "How Microsoft Transformed Customer Success with the ADKAR Model",
@@ -43,7 +43,7 @@ const resources = [
   {
     id: "stories",
     label: "ADKAR Success Stories",
-    icon: "https://www.prosci.com/hubfs/icon-star-damsen.svg",
+    icon: "/icon-dark-32x32.png",
     items: [
       {
         label: "Husky Uses the ADKAR Model to Achieve Project Results",
@@ -70,7 +70,7 @@ const resources = [
   {
     id: "webinars",
     label: "ADKAR Webinars",
-    icon: "https://www.prosci.com/hubfs/icon-video-camera-damsen.svg",
+    icon: "/icon-dark-32x32.png",
     items: [
       {
         label: "Introduction to ADKAR (30 Minutes)",
@@ -97,7 +97,7 @@ const resources = [
   {
     id: "downloads",
     label: "Downloadable Resources",
-    icon: "https://www.prosci.com/hubfs/icon-download-damsen.svg",
+    icon: "/icon-dark-32x32.png",
     items: [
       {
         label: "The Many Uses of ADKAR Infographic",
@@ -169,7 +169,7 @@ export default function AdkarModelPage() {
           <div className="space-y-8">
             <div className="overflow-hidden rounded-2xl border border-[#e8e0d6] bg-white shadow-sm transition-transform duration-300 hover:-translate-y-1">
               <img
-                src="https://www.prosci.com/hs-fs/hubfs/.%202026%20Website%20Rebrand/2026%20Hero%20Photography/Focused-listening-5_Feb-26.webp"
+                src="/Engaged-business-meeting-1_Feb-26.webp"
                 alt="Woman smiling and resting her head on her hand while talking with colleagues"
                 className="h-full w-full object-cover"
               />
@@ -177,7 +177,7 @@ export default function AdkarModelPage() {
             <div className="rounded-2xl border border-[#e8e0d6] bg-white p-6 shadow-sm">
               <div className="flex items-start gap-4">
                 <img
-                  src="https://www.prosci.com/hs-fs/hubfs/.%202026%20Website%20Rebrand/.%202026%20EN%20Website%20Rebrand/2026%20EN%20%20IP%20Images/2026%20EN%20Prosci-methodology-no-titles/Methodology-ADKAR-EN.webp"
+                  src="/methodology-tools.png"
                   alt="Prosci Methodology diagram with ADKAR highlighted"
                   className="h-24 w-24 shrink-0"
                 />
@@ -240,43 +240,19 @@ export default function AdkarModelPage() {
                 organizational results.
               </p>
             </div>
-
-            <div className="mt-8 rounded-2xl border border-[#e8e0d6] bg-white p-6 shadow-sm">
-              <div className="flex flex-col gap-6 md:flex-row">
-                <img
-                  src="https://www.prosci.com/hs-fs/hubfs/.%202026%20Website%20Rebrand/.%202026%20EN%20Website%20Rebrand/2026%20EN%20Downloads%20Coverpages%20Thumbnails/2026%20EN%20Lead%20Magnets/ADKAR-Model-eBook-Coverpage_EN_Feb-26.webp"
-                  alt="ADKAR Model eBook"
-                  className="h-auto w-40 shrink-0"
-                />
-                <div>
-                  <p className="text-base leading-7 text-[#2f2a2f]">
-                    Explore our powerful yet straightforward ADKAR model—and learn how it can help your organization
-                    achieve results once thought impossible.
-                  </p>
-                  <Link
-                    href="https://empower.prosci.com/prosci-adkar-model-for-organizational-change-success"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-5 inline-flex items-center rounded border border-[#350944] px-5 py-2 text-sm font-semibold text-[#350944] transition hover:-translate-y-0.5 hover:bg-[#f5f2eb]"
-                  >
-                    Download eBook
-                  </Link>
-                </div>
-              </div>
-            </div>
           </div>
 
           <div className="space-y-6">
             <div className="overflow-hidden rounded-2xl border border-[#e8e0d6] bg-white shadow-sm transition-transform duration-300 hover:-translate-y-1">
               <img
-                src="https://www.prosci.com/hs-fs/hubfs/.%202026%20Website%20Rebrand/Business-people-taking-notes-1_Feb-26_crop.jpg"
+                src="/Business-people-hands-1_Feb-26.webp"
                 alt="Business people taking notes"
                 className="h-full w-full object-cover"
               />
             </div>
             <div className="rounded-2xl border border-[#e8e0d6] bg-white p-6 shadow-sm">
               <img
-                src="https://www.prosci.com/hs-fs/hubfs/.%202026%20Website%20Rebrand/ADKAR-Model-EN.webp"
+                src="/ADKAR-Model-EN.png"
                 alt="ADKAR model"
                 className="w-full"
               />
@@ -289,7 +265,7 @@ export default function AdkarModelPage() {
         <div className="grid gap-10 md:grid-cols-2 md:items-center">
           <div className="overflow-hidden rounded-2xl border border-[#e8e0d6] bg-white shadow-sm transition-transform duration-300 hover:-translate-y-1">
             <img
-              src="https://www.prosci.com/hs-fs/hubfs/.%202026%20Website%20Rebrand/People-side-of-portfolio-management_Feb-26_crop_2.webp"
+              src="/Focused-conversation-2_Feb-26.webp"
               alt="People side of portfolio management"
               className="h-full w-full object-cover"
             />
@@ -299,26 +275,8 @@ export default function AdkarModelPage() {
             <div className="mt-5 space-y-4 text-lg leading-8 text-[#2f2a2f]">
               <p>
                 Activities for moving individuals through ADKAR transitions happen during Phase 2 – Manage Change of
-                the{" "}
-                <Link
-                  href="https://www.prosci.com/methodology/3-phase-process"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="underline underline-offset-4"
-                >
-                  Prosci 3-Phase Process
-                </Link>
-                , and are scalable to fit your needs. You apply the ADKAR Model using Proxima, an innovative online
-                tool included with certain{" "}
-                <Link
-                  href="https://www.prosci.com/membership"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="underline underline-offset-4"
-                >
-                  Prosci Membership plans
-                </Link>
-                .
+                the Prosci 3-Phase Process, and are scalable to fit your needs. You apply the ADKAR Model using Proxima, an innovative online
+                tool included with certain Prosci Membership plans.
               </p>
               <p>
                 In Proxima, you use tools such as the ADKAR Blueprint—the backbone of Prosci change management—to
@@ -364,19 +322,11 @@ export default function AdkarModelPage() {
                   </li>
                 </ul>
               </div>
-              <Link
-                href="https://www.amazon.com/dp/B0CZ38RFRQ"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-6 inline-flex items-center rounded border border-[#350944] px-5 py-2 text-sm font-semibold text-[#350944] transition hover:-translate-y-0.5 hover:bg-[#f5f2eb]"
-              >
-                Buy Now
-              </Link>
             </div>
           </div>
           <div className="overflow-hidden rounded-2xl border border-[#e8e0d6] bg-white shadow-sm transition-transform duration-300 hover:-translate-y-1">
             <img
-              src="https://www.prosci.com/hs-fs/hubfs/adkar-front-cover-v3-1.webp"
+              src="/adkar-front-cover-v3-1.png"
               alt="The ADKAR Advantage book cover"
               className="h-full w-full object-cover"
             />
@@ -386,16 +336,14 @@ export default function AdkarModelPage() {
 
       <section className="relative bg-[#2a0b3a] px-6 py-16 text-white">
         <img
-          src="https://22088958.fs1.hubspotusercontent-na1.net/hubfs/22088958/proscibb.jpg"
+          src="/Engaged-business-meeting-2_Feb-26.webp"
           alt="Background texture"
           className="absolute inset-0 h-full w-full object-cover opacity-40"
         />
         <div className="relative mx-auto max-w-4xl text-center">
-          <img
-            src="https://22088958.fs1.hubspotusercontent-na1.net/hubfs/22088958/quote-top.webp"
-            alt="Quote mark"
-            className="mx-auto h-10 w-auto"
-          />
+          <span className="mx-auto block text-4xl text-white/80" aria-hidden="true">
+            “
+          </span>
           <p className="mt-6 text-2xl leading-9 text-white md:text-3xl">
             Working our Adoption and Change Management program through the ADKAR Model gave us a higher degree of
             engagement… We were treating people differently.
@@ -433,7 +381,9 @@ export default function AdkarModelPage() {
               <div className="space-y-6">
                 {activeResourceGroup.items.map((item) => (
                   <div key={item.label} className="flex items-center gap-6 border-b border-[#eee9f1] pb-6">
-                    <img src={activeResourceGroup.icon} alt="" className="h-5 w-5" />
+                    <svg className="h-5 w-5 shrink-0 text-[#350944]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
                     <Link
                       href={item.href}
                       target="_blank"
@@ -445,35 +395,6 @@ export default function AdkarModelPage() {
                   </div>
                 ))}
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-gradient-to-br from-[#f5f2eb] via-[#f0e7f2] to-[#e9e6f3] px-6 py-16">
-        <div className="mx-auto max-w-6xl">
-          <h3 className="text-center font-serif text-3xl text-[#350944]">Discover the ADKAR Model for Organizational Change</h3>
-          <div className="mt-10 grid gap-8 md:grid-cols-[0.9fr_1.1fr] md:items-center">
-            <div className="rounded-2xl border border-[#e8e0d6] bg-white p-6 shadow-sm">
-              <img
-                src="https://www.prosci.com/hs-fs/hubfs/ADKAR-Model-eBook-Coverpage_EN_Feb-26.webp"
-                alt="ADKAR Model eBook cover"
-                className="w-full"
-              />
-            </div>
-            <div className="rounded-2xl border border-[#e8e0d6] bg-white p-6 shadow-sm">
-              <p className="text-lg leading-8 text-[#2f2a2f]">
-                Explore our powerful yet straightforward model—and learn how it can help your organization achieve
-                results once thought impossible.
-              </p>
-              <Link
-                href="https://empower.prosci.com/prosci-adkar-model-for-organizational-change-success"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-6 inline-flex items-center rounded border border-[#350944] px-5 py-2 text-sm font-semibold text-[#350944] transition hover:-translate-y-0.5 hover:bg-[#f5f2eb]"
-              >
-                Download the Guide
-              </Link>
             </div>
           </div>
         </div>

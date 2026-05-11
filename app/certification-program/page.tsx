@@ -1,4 +1,4 @@
-﻿import type { ReactNode } from "react"
+import type { ReactNode } from "react"
 import Link from "next/link"
 import Header from "@/components/Header"
 import Footer from "@/components/Footer"
@@ -183,7 +183,7 @@ const timeRequirements = [
   },
 ]
 
-/* Course overview removed â€” data cleaned up. */
+/* Course overview removed — data cleaned up. */
 
 
 const credits = [
@@ -841,11 +841,6 @@ export default function CertificationProgramPage() {
               </div>
             ))}
           </div>
-          <div className="mt-8 text-center">
-            <StaticButton className="rounded-sm bg-[#3f484f] px-6 py-3 text-sm font-semibold uppercase text-white">
-              Create Your Success Story
-            </StaticButton>
-          </div>
         </div>
       </section>
 
@@ -858,12 +853,16 @@ export default function CertificationProgramPage() {
             </div>
           ))}
         </div>
-      </section>
-
+        </div>
       <Footer />
     </main>
   )
 }
+
+
+
+
+
 
 
 
