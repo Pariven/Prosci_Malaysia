@@ -46,14 +46,6 @@ export default function IndustrySection() {
           </div>
         </div>
 
-        <div className="text-center mt-12">
-          <Link
-            href="#industries"
-            className="inline-flex items-center px-6 py-3 bg-[#3d1a4e] text-white font-semibold rounded hover:bg-[#2d1339] transition-colors uppercase tracking-wide"
-          >
-            See Industry Insights
-          </Link>
-        </div>
       </div>
     </section>
   )

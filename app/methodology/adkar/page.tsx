@@ -128,9 +128,9 @@ export default function AdkarModelPage() {
 
       <section className="relative flex min-h-[320px] items-center justify-center overflow-hidden px-6 py-16 text-center md:min-h-[420px]">
         <img
-          src="https://www.prosci.com/hs-fs/hubfs/.%202026%20Website%20Rebrand/2026%20Hero%20Photography/Focused-listening-3_Feb-26.webp"
+          src="/images/ai-transformation.png"
           alt="Woman in a blue sweater looking attentively at a man during a conversation"
-          className="absolute inset-0 h-full w-full object-cover"
+          className="absolute inset-0 h-full w-full object-cover object-[center_20%]"
         />
         <div className="absolute inset-0 bg-[#2a0b3a]/75" />
         <div className="relative z-10 max-w-3xl text-white">

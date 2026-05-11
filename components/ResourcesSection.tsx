@@ -143,14 +143,6 @@ export default function ResourcesSection() {
           </div>
         </div>
 
-        <div className="mt-8 text-center">
-          <Link
-            href="#"
-            className="inline-flex items-center px-6 py-3 bg-[#3d1a4e] text-white font-semibold rounded hover:bg-[#2d1339] transition-colors uppercase tracking-wide"
-          >
-            Explore resources and tools
-          </Link>
-        </div>
       </div>
     </section>
   )

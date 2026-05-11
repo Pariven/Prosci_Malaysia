@@ -198,106 +198,143 @@ const upcomingDates = [
     date: "12 - 14 Jan 2026",
     focus: "Face to Face",
     mode: "Kuala Lumpur | English",
+    registerUrl: "",
   },
   {
     date: "24 - 26 Feb 2026",
     focus: "Face to Face",
     mode: "Kuala Lumpur | English",
+    registerUrl: "",
   },
   {
     date: "9 - 11 Mar 2026",
     focus: "Face to Face",
     mode: "Kuala Lumpur | English",
+    registerUrl: "",
   },
   {
     date: "20 - 22 April 2026",
     focus: "Face to Face",
     mode: "Kuala Lumpur | English",
+    registerUrl: "",
   },
   {
     date: "27 - 29 April 2026",
     focus: "VILT",
     mode: "Online | English",
+    registerUrl: "",
   },
   {
     date: "18 - 20 May 2026",
     focus: "Face to Face",
     mode: "Kuala Lumpur | English",
+    registerUrl:
+      "https://forms.proscimalaysia.com/Kpintar/form/RegistrationForm/formperma/LHwZYkL0CfBZIMSeyS2Tro6NdwAVRAHkATWfut65iPA",
   },
   {
     date: "25 - 27 May 2026",
     focus: "VILT",
     mode: "Online | English",
+    registerUrl:
+      "https://forms.proscimalaysia.com/Kpintar/form/PROSCIChangeManagementCertificationProgram7/formperma/nUxihRA1hFeyWqD1A0yhwFPEcdpIn-KakAMw9VVoqtY",
   },
   {
     date: "22 - 24 June 2026",
     focus: "Face to Face",
     mode: "Kuala Lumpur | English",
+    registerUrl:
+      "https://forms.proscimalaysia.com/Kpintar/form/PROSCIChangeManagementCertificationProgram/formperma/kJv9q73_jqnkte5n5YNDG9cE0RayWO9C8ilQfS4Ck7Q",
   },
   {
     date: "8 - 10 June 2026",
     focus: "VILT",
     mode: "Online | English",
+    registerUrl:
+      "https://forms.proscimalaysia.com/Kpintar/form/PROSCIChangeManagementCertificationProgram8/formperma/x-kHpXE7smesfY_fNcmxDXESezSk0s7YCqiT3w7P5j8",
   },
   {
     date: "13 - 15 July 2026",
     focus: "Face to Face",
     mode: "Kuala Lumpur | English",
+    registerUrl:
+      "https://forms.proscimalaysia.com/Kpintar/form/PROSCIChangeManagementCertificationProgram1/formperma/_IW1g5RQeQj-qG0hgqI3TP2xNdUItpfZktuIaK0veKU",
   },
   {
     date: "20 - 22 July 2026",
     focus: "VILT",
     mode: "Online | English",
+    registerUrl:
+      "https://forms.proscimalaysia.com/Kpintar/form/PROSCIChangeManagementCertificationProgram9/formperma/UC8TZTqo9QdoQrsqHLHXIRzgbLGcEFdyzr_gxPD0F5E",
   },
   {
     date: "10 - 12 Aug 2026",
     focus: "Face to Face",
     mode: "Kuala Lumpur | English",
+    registerUrl:
+      "https://forms.proscimalaysia.com/Kpintar/form/PROSCIChangeManagementCertificationProgram2/formperma/prWg3GS0qMsMzyQC_517UsBLaUmAtg0bcPXD2VkCEyA",
   },
   {
     date: "17 - 19 Aug 2026",
     focus: "VILT",
     mode: "Online | English",
+    registerUrl:
+      "https://forms.proscimalaysia.com/Kpintar/form/PROSCIChangeManagementCertificationProgram10/formperma/YXyjvhFnOC-ir4ld34xxp4q4K0QEFpSk65tROn_S8Fk",
   },
   {
     date: "21 - 23 Sept 2026",
     focus: "Face to Face",
     mode: "Kuala Lumpur | English",
+    registerUrl:
+      "https://forms.proscimalaysia.com/Kpintar/form/PROSCIChangeManagementCertificationProgram3/formperma/ho987O5nNMB51FknKxdlhNvWhEj2iSFieY8XR0nhHL0",
   },
   {
     date: "7 - 9 Sept 2026",
     focus: "VILT",
     mode: "Online | English",
+    registerUrl:
+      "https://forms.proscimalaysia.com/Kpintar/form/PROSCIChangeManagementCertificationProgram11/formperma/6Dn3ox6oL7-qJ97vSWhrmSFW0uRdeIshRh-kWk0Iup0",
   },
   {
     date: "12 - 14 Oct 2026",
     focus: "Face to Face",
     mode: "Kuala Lumpur | English",
+    registerUrl:
+      "https://forms.proscimalaysia.com/Kpintar/form/PROSCIChangeManagementCertificationProgram4/formperma/HnvY16SVSdawhxq5eU3HEpI2jsLuX2FbnfhXNc3ZJnA",
   },
   {
     date: "19 - 21 Oct 2026",
     focus: "VILT",
     mode: "Online | English",
+    registerUrl:
+      "https://forms.proscimalaysia.com/Kpintar/form/PROSCIChangeManagementCertificationProgram12/formperma/6zp0AofWuNvR0B06Ij_yCeTGDRr83TCEs4lB0o_sCYY",
   },
   {
     date: "16 - 18 Nov 2026",
     focus: "Face to Face",
     mode: "Kuala Lumpur | English",
+    registerUrl:
+      "https://forms.proscimalaysia.com/Kpintar/form/PROSCIChangeManagementCertificationProgram5/formperma/sBoKiZuWCkKob3IYpGDoqEvdLdSAavACR0yjb5osi4g",
   },
   {
     date: "2 - 4 Nov 2026",
     focus: "VILT",
     mode: "Online | English",
+    registerUrl:
+      "https://forms.proscimalaysia.com/Kpintar/form/PROSCIChangeManagementCertificationProgram13/formperma/xtnxWwhZRdPBzFRUt5cFkxnkljAnmeScGQXRklhwac4",
   },
   {
     date: "7 - 9 Dec 2026",
     focus: "Face to Face",
     mode: "Kuala Lumpur | English",
+    registerUrl:
+      "https://forms.proscimalaysia.com/Kpintar/form/PROSCIChangeManagementCertificationProgram6/formperma/uSRw1x04hua98_1pS64dMWpTDwhIcnadNAEZ4N_1vO0",
   },
   {
     date: "15 - 17 Dec 2026",
     focus: "VILT",
     mode: "Online | English",
+    registerUrl:
+      "https://forms.proscimalaysia.com/Kpintar/form/PROSCIChangeManagementCertificationProgram14/formperma/6o5YVRvrZEm1ma4r3YwVhWSJ7H8JP0zXSIkR4Mtbe_s",
   },
 ]
 
@@ -461,12 +498,20 @@ export default function CertificationProgramPage() {
                             <p className="text-[14px] font-semibold leading-5 text-[#3f484f]">{item.date}</p>
                             <p className="mt-1 text-[13px] leading-4 text-[#7a7a7a]">{item.mode}</p>
                           </div>
-                          <Link
-                            href="#"
-                            className="shrink-0 rounded bg-[#5c1761] px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.1em] text-white transition-colors hover:bg-[#CCCCFF] whitespace-nowrap"
-                          >
-                            Register
-                          </Link>
+                          {item.registerUrl ? (
+                            <Link
+                              href={item.registerUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="shrink-0 rounded bg-[#5c1761] px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.1em] text-white transition-colors hover:bg-[#CCCCFF] whitespace-nowrap"
+                            >
+                              Register
+                            </Link>
+                          ) : (
+                            <StaticButton className="shrink-0 rounded bg-[#5c1761] px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.1em] text-white opacity-60 whitespace-nowrap">
+                              Register
+                            </StaticButton>
+                          )}
                         </div>
                       ))}
                   </div>
@@ -489,12 +534,20 @@ export default function CertificationProgramPage() {
                             <p className="text-[14px] font-semibold leading-5 text-[#3f484f]">{item.date}</p>
                             <p className="mt-1 text-[13px] leading-4 text-[#7a7a7a]">{item.mode}</p>
                           </div>
-                          <Link
-                            href="#"
-                            className="shrink-0 rounded bg-[#5c1761] px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.1em] text-white transition-colors hover:bg-[#CCCCFF] whitespace-nowrap"
-                          >
-                            Register
-                          </Link>
+                          {item.registerUrl ? (
+                            <Link
+                              href={item.registerUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="shrink-0 rounded bg-[#5c1761] px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.1em] text-white transition-colors hover:bg-[#CCCCFF] whitespace-nowrap"
+                            >
+                              Register
+                            </Link>
+                          ) : (
+                            <StaticButton className="shrink-0 rounded bg-[#5c1761] px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.1em] text-white opacity-60 whitespace-nowrap">
+                              Register
+                            </StaticButton>
+                          )}
                         </div>
                       ))}
                   </div>

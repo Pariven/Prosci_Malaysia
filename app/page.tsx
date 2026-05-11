@@ -5,6 +5,7 @@ import SolutionsSection from "@/components/SolutionsSection"
 import IndustrySection from "@/components/IndustrySection"
 import NewsletterSection from "@/components/NewsletterSection"
 import ResourcesSection from "@/components/ResourcesSection"
+import UpcomingEventsSection from "@/components/UpcomingEventsSection"
 import Footer from "@/components/Footer"
 
 export default function Home() {
@@ -15,6 +16,7 @@ export default function Home() {
       <StatsSection />
       <SolutionsSection />
       <IndustrySection />
+      <UpcomingEventsSection />
       <ResourcesSection />
       <NewsletterSection />
       <Footer />

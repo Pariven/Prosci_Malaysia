@@ -86,12 +86,6 @@ export default function RoleBasedCertificationPage() {
                 We offer several of these programs virtually. Contact us to learn more.
               </p>
             </div>
-            <a
-              href={asset("Prosci-Enterprise-Overview-Guide.pdf")}
-              className="mt-6 inline-flex items-center justify-center rounded bg-[#3d1a4e] px-4 py-2 text-xs font-semibold uppercase tracking-wide text-white transition-colors hover:bg-[#2c0f3b]"
-            >
-              Download Overview Guide
-            </a>
           </div>
         </div>
       </section>

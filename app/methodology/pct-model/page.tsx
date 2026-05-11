@@ -217,14 +217,6 @@ export default function PctModelPage() {
               your change-related goals for successful project outcomes. You will also learn about assessing and
               tracking project health over the lifecycle of the project, and how to use this information to take action.
             </p>
-            <Link
-              href="https://www.prosci.com/resources/webinars/prosci-change-triangle-model"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-6 inline-flex items-center rounded bg-[#350944] px-5 py-3 text-sm font-semibold text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#2b0737]"
-            >
-              Watch Now
-            </Link>
           </div>
         </div>
       </section>
