@@ -853,7 +853,8 @@ export default function CertificationProgramPage() {
             </div>
           ))}
         </div>
-        </div>
+      </section>
+
       <Footer />
     </main>
   )
