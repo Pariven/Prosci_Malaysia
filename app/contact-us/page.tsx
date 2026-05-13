@@ -58,12 +58,6 @@ export default function ContactUsPage() {
           reasonForContact: '',
           comments: '',
         })
-      } else if (result?.error === 'SMTP_NOT_CONFIGURED') {
-        // Fallback: open user's email client with mailto to enquiry@kpintar.com
-        const subject = encodeURIComponent(`Website Contact: ${formData.reasonForContact || 'Inquiry'}`)
-        const body = encodeURIComponent(`Name: ${formData.firstName} ${formData.lastName}\nEmail: ${formData.email}\nOrganization: ${formData.organization}\nPhone: ${formData.phone}\n\nComments:\n${formData.comments}`)
-        window.location.href = `mailto:enquiry@kpintar.com?subject=${subject}&body=${body}`
-        setSubmitStatus('success')
       } else {
         setSubmitStatus('error')
       }

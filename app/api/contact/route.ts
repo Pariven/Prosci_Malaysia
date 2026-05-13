@@ -1,5 +1,7 @@
-import nodemailer from 'nodemailer'
+import { Resend } from 'resend'
 import { NextResponse } from 'next/server'
+
+const resend = new Resend(process.env.RESEND_API_KEY)
 
 export async function POST(req: Request) {
   try {
@@ -19,46 +21,39 @@ export async function POST(req: Request) {
       comments,
     } = data
 
-    // Require SMTP configuration via environment variables
-    const host = process.env.SMTP_HOST
-    const port = process.env.SMTP_PORT ? Number(process.env.SMTP_PORT) : undefined
-    const user = process.env.SMTP_USER
-    const pass = process.env.SMTP_PASS
-    const fromAddress = process.env.EMAIL_FROM || user || 'no-reply@kpintar.com'
+    // Get configuration from environment variables
+    const toEmail = process.env.CONTACT_TO_EMAIL || 'enquiry@kpintar.com'
+    const fromEmail = process.env.CONTACT_FROM_EMAIL || 'noreply@proscimalaysia.com'
+    const apiKey = process.env.RESEND_API_KEY
 
-    if (!host || !port || !user || !pass) {
-      return NextResponse.json({ ok: false, error: 'SMTP_NOT_CONFIGURED' }, { status: 500 })
+    if (!apiKey) {
+      return NextResponse.json({ ok: false, error: 'RESEND_API_KEY_NOT_CONFIGURED' }, { status: 500 })
     }
 
-    const transporter = nodemailer.createTransport({
-      host,
-      port,
-      secure: port === 465, // true for 465, false for other ports
-      auth: {
-        user,
-        pass,
-      },
-    })
-
     const subject = `Website Contact: ${reasonForContact || 'General Inquiry'} - ${firstName || ''} ${lastName || ''}`
-    const text = `Name: ${firstName || ''} ${lastName || ''}\nEmail: ${email || ''}\nJob Title: ${jobTitle || ''}\nOrganization: ${organization || ''}\nPhone: ${phone || ''}\nJob Level: ${jobLevel || ''}\nIndustry: ${industry || ''}\nCountry: ${country || ''}\nReason: ${reasonForContact || ''}\n\nComments:\n${comments || ''}`
+    
+    const html = `
+      <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
+        <h2 style="color: #3d1a4e;">New Contact Form Submission</h2>
+        <p><strong>Name:</strong> ${firstName || ''} ${lastName || ''}</p>
+        <p><strong>Email:</strong> <a href="mailto:${email}">${email || ''}</a></p>
+        <p><strong>Job Title:</strong> ${jobTitle || ''}</p>
+        <p><strong>Organization:</strong> ${organization || ''}</p>
+        <p><strong>Phone:</strong> ${phone || ''}</p>
+        <p><strong>Job Level:</strong> ${jobLevel || ''}</p>
+        <p><strong>Industry:</strong> ${industry || ''}</p>
+        <p><strong>Country:</strong> ${country || ''}</p>
+        <p><strong>Reason for Contact:</strong> ${reasonForContact || ''}</p>
+        <hr style="border: none; border-top: 1px solid #ddd; margin: 20px 0;">
+        <p><strong>Comments:</strong></p>
+        <p style="white-space: pre-wrap; background: #f5f5f5; padding: 15px; border-radius: 5px;">${(comments || '').replace(/</g, '&lt;').replace(/>/g, '&gt;')}</p>
+      </div>
+    `
 
-    const html = `<p><strong>Name:</strong> ${firstName || ''} ${lastName || ''}</p>
-      <p><strong>Email:</strong> ${email || ''}</p>
-      <p><strong>Job Title:</strong> ${jobTitle || ''}</p>
-      <p><strong>Organization:</strong> ${organization || ''}</p>
-      <p><strong>Phone:</strong> ${phone || ''}</p>
-      <p><strong>Job Level:</strong> ${jobLevel || ''}</p>
-      <p><strong>Industry:</strong> ${industry || ''}</p>
-      <p><strong>Country:</strong> ${country || ''}</p>
-      <p><strong>Reason:</strong> ${reasonForContact || ''}</p>
-      <p><strong>Comments:</strong><br/>${(comments || '').replace(/\n/g, '<br/>')}</p>`
-
-    await transporter.sendMail({
-      from: fromAddress,
-      to: 'enquiry@kpintar.com',
+    await resend.emails.send({
+      from: fromEmail,
+      to: toEmail,
       subject,
-      text,
       html,
       replyTo: email || undefined,
     })
