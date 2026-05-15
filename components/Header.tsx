@@ -2,6 +2,7 @@
 
 import Image from "next/image"
 import Link from "next/link"
+import { useRouter } from "next/navigation"
 import { useEffect, useRef, useState } from "react"
 import { ChevronDown, Globe, Menu, X, Calendar } from "lucide-react"
 
@@ -74,16 +75,20 @@ const navItems: NavItem[] = [
           items: [
             { label: "Certification Program", href: "/certification-program" },
             { label: "Role-Based Certification", href: "/role-based-certification" },
-            "Membership",
+            { label: "Membership", href: "/membership" },
           ],
         },
         {
           title: "Solutions For Organizations",
-          items: ["Enterprise Change Management Boot Camp"],
+          items: [
+            { label: "Enterprise Change Management Boot Camp", href: "/resources/enterprise-boot-camp" },
+          ],
         },
         {
-          title: "Industry Insights",
-          items: ["Advisory Services"],
+          title: "Others",
+          items: [
+            { label: "Advisory Services", href: "/resources/advisory-services" },
+          ],
         },
       ],
     },
@@ -112,11 +117,45 @@ const navItems: NavItem[] = [
   },
 ]
 export default function Header() {
+  const router = useRouter()
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [openMobileSection, setOpenMobileSection] = useState<string | null>(null)
   const [isLanguageMenuOpen, setIsLanguageMenuOpen] = useState(false)
   const [language, setLanguage] = useState<LanguageCode>("en")
   const languageMenuRef = useRef<HTMLDivElement | null>(null)
+
+  useEffect(() => {
+    const routes = new Set<string>()
+    const addRoute = (href?: string) => {
+      if (!href) return
+      const normalized = href.split("#")[0]
+      if (normalized.startsWith("/")) {
+        routes.add(normalized)
+      }
+    }
+
+    navItems.forEach((item) => {
+      addRoute(item.href)
+      item.dropdownItems?.forEach((subItem) => addRoute(subItem.href))
+
+      if (item.megaMenu) {
+        item.megaMenu.columns.forEach((column) => {
+          column.items.forEach((subItem) => {
+            if (typeof subItem !== "string") {
+              addRoute(subItem.href)
+            }
+          })
+        })
+      }
+    })
+
+    // Prefetch top-bar internal CTA too.
+    addRoute("/certification-program")
+
+    routes.forEach((route) => {
+      router.prefetch(route)
+    })
+  }, [router])
 
   useEffect(() => {
     const existingCookie = document.cookie
@@ -299,7 +338,7 @@ export default function Header() {
                     <div className="border border-gray-200 bg-[#f6f4f2] shadow-lg p-6">
                       <h3 className="text-[36px] leading-none font-playfair text-[#35104b]">{item.megaMenu.title}</h3>
                       <Link
-                        href="#"
+                        href="/solutions"
                         className="mt-2 inline-block text-sm text-black underline underline-offset-4 hover:text-[#3d1a4e]"
                       >
                         {item.megaMenu.ctaText}
@@ -564,7 +603,17 @@ export default function Header() {
                     ) : null}
 
                     {openMobileSection === item.label && item.megaMenu ? (
-                      <div className="border-t border-gray-100 px-4 py-3 space-y-3">
+                      <div className="border-t border-gray-100 px-4 py-3 space-y-4">
+                        <div className="flex items-center justify-between gap-3">
+                          <p className="text-base font-serif text-[#35104b]">{item.megaMenu.title}</p>
+                          <Link
+                            href="/solutions"
+                            className="text-sm font-semibold text-[#3d1a4e] underline underline-offset-4"
+                            onClick={() => setMobileMenuOpen(false)}
+                          >
+                            {item.megaMenu.ctaText}
+                          </Link>
+                        </div>
                         {item.megaMenu.columns.map((column) => (
                           <div key={column.title}>
                             <p className="mb-1 text-[11px] font-semibold uppercase tracking-wide text-gray-500">

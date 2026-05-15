@@ -3,7 +3,6 @@ import HeroSection from "@/components/HeroSection"
 import StatsSection from "@/components/StatsSection"
 import SolutionsSection from "@/components/SolutionsSection"
 import IndustrySection from "@/components/IndustrySection"
-import NewsletterSection from "@/components/NewsletterSection"
 import ResourcesSection from "@/components/ResourcesSection"
 import GallerySection from "@/components/GallerySection"
 import UpcomingEventsSection from "@/components/UpcomingEventsSection"
@@ -20,7 +19,6 @@ export default function Home() {
       <UpcomingEventsSection />
       <ResourcesSection />
       <GallerySection />
-      <NewsletterSection />
       <Footer />
     </main>
   )

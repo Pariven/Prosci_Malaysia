@@ -1,4 +1,5 @@
 import React from "react"
+import Link from "next/link"
 
 const assetPath = (path: string) =>
   `/${path
@@ -42,12 +43,12 @@ export default function TrainingCard({
           </div>
 
           <div className="mt-6 flex items-center justify-between">
-            <a
-              href="/certification-program"
+            <Link
+              href="/contact-us"
               className="inline-flex items-center rounded-md bg-[#3d1a4e] px-4 py-2 text-xs font-semibold text-white"
             >
               LEARN MORE
-            </a>
+            </Link>
 
             <a href={assetPath(downloadHref)} className="text-sm font-medium text-[#3d1a4e]">
               Download Info Guide

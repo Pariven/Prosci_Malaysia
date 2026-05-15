@@ -113,8 +113,8 @@ export default function WhyChangeManagementPage() {
 
       <section className="relative overflow-hidden px-6 py-16 md:py-24">
         <img
-          src="/images/change-management/Team-discussion-1_Feb-26_crop.jpg"
-          alt="Team discussion"
+          src="/ChatGPT%20Image%20May%2012,%202026,%2006_57_03%20PM.png"
+          alt="Change management hero"
           className="absolute inset-0 h-full w-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-[#2a0b3a]/90 via-[#32124a]/80 to-[#2c1f41]/60" />
@@ -291,7 +291,7 @@ export default function WhyChangeManagementPage() {
             <section id="capability" className="space-y-8">
               <div className="grid gap-10 md:grid-cols-[0.95fr_1.05fr] md:items-center">
                 <img
-                  src="/images/change-management/ADKAR-Model-EN.webp"
+                  src="/ADKAR-Model-EN.png"
                   alt="ADKAR model"
                   className="w-full rounded-xl border border-[#e8e0d6] bg-white p-4"
                 />
@@ -361,20 +361,6 @@ export default function WhyChangeManagementPage() {
                     results.
                   </p>
                 </div>
-                <div className="flex flex-wrap gap-4 md:justify-end">
-                  <Link
-                    href="/change-management"
-                    className="rounded bg-white px-5 py-3 text-sm font-semibold text-[#350944] transition hover:bg-[#f0e7f5]"
-                  >
-                    Change management hub
-                  </Link>
-                  <Link
-                    href="/change-management/what-is-change-management"
-                    className="rounded border border-white/40 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
-                  >
-                    Explore the overview
-                  </Link>
-                </div>
               </div>
             </section>
           </article>
@@ -396,32 +382,6 @@ export default function WhyChangeManagementPage() {
               </ul>
             </div>
           </aside>
-        </div>
-      </section>
-
-      <section className="bg-[#f5f2eb] px-6 py-16">
-        <div className="mx-auto max-w-3xl text-center">
-          <h2 className="font-serif text-3xl text-[#350944] md:text-4xl">Subscribe for change insights</h2>
-          <p className="mt-4 text-base leading-7 text-[#4a3d4f]">
-            Get bi-weekly articles, research highlights, and practical guidance for leading change.
-          </p>
-          <form className="mx-auto mt-8 flex max-w-md flex-col gap-4 sm:flex-row">
-            <input
-              type="email"
-              placeholder="Subscribe to email"
-              className="flex-1 rounded border border-[#c9c1d0] bg-white px-4 py-3 text-sm"
-              aria-label="Email address"
-            />
-            <button
-              type="submit"
-              className="rounded bg-[#350944] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#2b0737]"
-            >
-              Submit
-            </button>
-          </form>
-          <p className="mt-4 text-xs leading-5 text-[#6b5a72]">
-            By submitting your email, you agree to receive occasional communications. You can unsubscribe anytime.
-          </p>
         </div>
       </section>
 

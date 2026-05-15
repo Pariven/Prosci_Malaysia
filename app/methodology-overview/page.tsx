@@ -71,9 +71,10 @@ export default function MethodologyOverviewPage() {
 
       <section className="relative flex min-h-[320px] items-center justify-center overflow-hidden px-6 py-16 text-center md:min-h-[420px]">
         <img
-          src="https://367443.fs1.hubspotusercontent-na1.net/hubfs/367443/.%202026%20Website%20Rebrand/2026%20Hero%20Photography/Focused-listening-2_Feb-26.webp"
-          alt="Woman listening during a meeting"
+          src="/images/erp-transformation.png"
+          alt="ERP Transformation - Team collaboration meeting"
           className="absolute inset-0 h-full w-full object-cover"
+          style={{ objectPosition: 'center 30%' }}
         />
         <div className="absolute inset-0 bg-[#2a0b3a]/75" />
         <div className="relative z-10 max-w-3xl text-white">
@@ -313,54 +314,11 @@ export default function MethodologyOverviewPage() {
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <Link
-                href="https://www.prosci.com/solutions/training-programs/change-management-certification-program"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/certification-program"
                 className="rounded bg-[#350944] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#2b0737]"
               >
                 Certification Program
               </Link>
-              <Link
-                href="https://www.prosci.com/hubfs/2.downloads/datasheets-and-info-guides/portal-tools/Prosci-Hub-Solution-Suite-Datasheet.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="rounded border border-[#350944] px-5 py-3 text-sm font-semibold text-[#350944] transition hover:bg-[#f5f2eb]"
-              >
-                Prosci Hub Solution Suite
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-gradient-to-br from-[#f5f2eb] via-[#f0e7f2] to-[#e9e6f3] px-6 py-16">
-        <div className="mx-auto max-w-6xl">
-          <h2 className="text-center font-serif text-4xl text-[#350944]">An Introduction to Change Management Guide</h2>
-          <div className="mt-10 grid gap-8 md:grid-cols-[0.9fr_1.1fr] md:items-center">
-            <div className="rounded-2xl border border-[#e8e0d6] bg-white p-6 shadow-sm">
-              <img
-                src="https://www.prosci.com/hs-fs/hubfs/.%202026%20Website%20Rebrand/.%202026%20EN%20Website%20Rebrand/2026%20EN%20Downloads/Introduction%20to%20Change%20Management%20eBook/Introduction%20to%20Change%20Management%20eBook_Coverpage_EN_Mar-2026.webp"
-                alt="Introduction to Change Management guide"
-                className="w-full"
-              />
-            </div>
-            <div className="rounded-2xl border border-[#e8e0d6] bg-white p-6 shadow-sm">
-              <p className="text-lg leading-8 text-[#2f2a2f]">
-                The data is clear: even when organizational changes meet technical requirements and milestones, they can
-                still fail to deliver results and benefits. What is missing? Change management. Organizations that
-                embrace change management are more likely to achieve project objectives, stay on or ahead of schedule,
-                and stay on or under budget.
-              </p>
-              <div className="mt-6">
-                <Link
-                  href="https://empower.prosci.com/en-us/introduction-to-change-management-guide"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center rounded bg-[#350944] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#2b0737]"
-                >
-                  Download the free eBook
-                </Link>
-              </div>
             </div>
           </div>
         </div>

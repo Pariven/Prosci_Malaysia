@@ -194,10 +194,7 @@ export default function AdkarModelPage() {
             <div className="mt-6 space-y-5 text-lg leading-8 text-[#2f2a2f]">
               <p>
                 The Prosci ADKAR® Model is one of the two foundational models of the Prosci Methodology, in addition to
-                the{" "}
-                <Link href="/methodology/pct-model" className="underline underline-offset-4">
-                  PCT Model
-                </Link>
+                the PCT Model
                 . The word "ADKAR" is an acronym for the five outcomes an individual needs to achieve for a change to be
                 successful: <em>Awareness</em>, <em>Desire</em>, <em>Knowledge</em>, <em>Ability</em> and
                 <em> Reinforcement</em>.
@@ -349,54 +346,6 @@ export default function AdkarModelPage() {
             engagement… We were treating people differently.
           </p>
           <p className="mt-6 text-lg text-white/80">- Jean-Claude Monney, Microsoft</p>
-        </div>
-      </section>
-
-      <section className="bg-[#2a0b3a] px-6 py-16">
-        <div className="mx-auto max-w-6xl text-white">
-          <div className="text-center">
-            <h2 className="font-serif text-3xl md:text-4xl">Featured ADKAR Model Resources</h2>
-            <p className="mt-2 text-sm uppercase tracking-[0.2em] text-white/70">
-              To help guide you on your change journey.
-            </p>
-          </div>
-          <div className="mt-10 grid gap-0 overflow-hidden rounded border border-[#f5f2eb]/30 md:grid-cols-[1fr_2fr]">
-            <div className="bg-[#3d1a4e] p-8">
-              <div className="space-y-4">
-                {resources.map((group) => (
-                  <button
-                    key={group.id}
-                    type="button"
-                    onClick={() => setActiveGroup(group.id)}
-                    className={`w-full text-left text-sm font-semibold uppercase tracking-wider transition-opacity ${
-                      activeGroup === group.id ? "opacity-100" : "opacity-70 hover:opacity-100"
-                    }`}
-                  >
-                    {group.label}
-                  </button>
-                ))}
-              </div>
-            </div>
-            <div className="bg-white px-8 py-10 text-[#350944]">
-              <div className="space-y-6">
-                {activeResourceGroup.items.map((item) => (
-                  <div key={item.label} className="flex items-center gap-6 border-b border-[#eee9f1] pb-6">
-                    <svg className="h-5 w-5 shrink-0 text-[#350944]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                    <Link
-                      href={item.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-base font-medium transition-opacity hover:opacity-60"
-                    >
-                      {item.label}
-                    </Link>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 

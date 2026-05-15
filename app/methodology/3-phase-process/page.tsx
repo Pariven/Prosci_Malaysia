@@ -192,21 +192,6 @@ export default function ThreePhaseProcessPage() {
         </div>
       </section>
 
-      <section className="bg-gradient-to-r from-[#2a0b3a] via-[#3d1a4e] to-[#2a0b3a] px-6 py-12">
-        <div className="mx-auto flex max-w-5xl flex-col items-center gap-6 text-center text-white">
-          <h2 className="font-serif text-3xl md:text-4xl">Ready to apply the 3-Phase Process?</h2>
-          <p className="text-base leading-7 text-white/90 md:text-lg">
-            Align sponsors, activate people-side plans, and sustain outcomes with a repeatable change framework.
-          </p>
-          <Link
-            href="#contact"
-            className="inline-flex items-center rounded bg-white px-5 py-3 text-sm font-semibold text-[#350944] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#f5f2eb]"
-          >
-            Get in touch
-          </Link>
-        </div>
-      </section>
-
       <Footer />
     </main>
   )

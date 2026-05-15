@@ -33,7 +33,7 @@ const WhatsAppButton = () => {
   return (
     <StyledWrapper>
       <a
-        href="https://wa.me/60362284148?text=Hello%20Prosci"
+        href="https://wa.me/60162177965?text=Hello%20Prosci"
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Contact us on WhatsApp"

@@ -336,7 +336,7 @@ export default function Home() {
           We use a structured process - the ADKAR Model - to guide individuals through a particular change to ensure
           that they embrace and adopt the change.
         </p>
-        <img src="/images/change-management/ADKAR-Model-EN.webp" alt="ADKAR model" className="mx-auto mt-8 w-full max-w-[760px]" />
+        <img src="/ADKAR-Model-EN.png" alt="ADKAR model" className="mx-auto mt-8 w-full max-w-[760px]" />
       </section>
 
       <section className="mx-auto grid max-w-[1100px] gap-12 px-6 py-12 md:grid-cols-2 md:items-center">
@@ -388,7 +388,7 @@ export default function Home() {
             our website.
           </p>
         </div>
-        <img src="/images/change-management/Team-discussion-1_Feb-26_crop.jpg" alt="Team discussion" className="w-full" />
+        <img src="/certification-program/Change%20management.png" alt="Change management" className="w-full" />
       </section>
 
       <section className="bg-[#f6f4ed] px-6 py-14">

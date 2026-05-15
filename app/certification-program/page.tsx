@@ -228,8 +228,7 @@ const upcomingDates = [
     date: "18 - 20 May 2026",
     focus: "Face to Face",
     mode: "Kuala Lumpur | English",
-    registerUrl:
-      "https://forms.proscimalaysia.com/Kpintar/form/RegistrationForm/formperma/LHwZYkL0CfBZIMSeyS2Tro6NdwAVRAHkATWfut65iPA",
+    registerUrl: "",
   },
   {
     date: "25 - 27 May 2026",
@@ -509,7 +508,7 @@ export default function CertificationProgramPage() {
                             </Link>
                           ) : (
                             <StaticButton className="shrink-0 rounded bg-[#5c1761] px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.1em] text-white opacity-60 whitespace-nowrap">
-                              Register
+                              Close
                             </StaticButton>
                           )}
                         </div>
@@ -545,7 +544,7 @@ export default function CertificationProgramPage() {
                             </Link>
                           ) : (
                             <StaticButton className="shrink-0 rounded bg-[#5c1761] px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.1em] text-white opacity-60 whitespace-nowrap">
-                              Register
+                              Close
                             </StaticButton>
                           )}
                         </div>
@@ -756,11 +755,6 @@ export default function CertificationProgramPage() {
               </div>
             </div>
           </div>
-          <div className="mt-8 text-center">
-            <StaticButton className="rounded-sm bg-[#3f484f] px-6 py-3 text-sm font-semibold uppercase text-white">
-              View Training Schedule
-            </StaticButton>
-          </div>
           <div className="mt-10 flex flex-wrap items-center justify-between gap-6 rounded-lg bg-[#5c1761] px-6 py-6 text-white">
             <div className="flex items-center gap-4">
               <div
@@ -797,11 +791,6 @@ export default function CertificationProgramPage() {
               apart in the growing field of change management, creating new opportunities and
               establishing your position as a trusted change leader.
             </p>
-            <div className="mt-8">
-              <StaticButton className="rounded-sm bg-[#3f484f] px-6 py-3 text-sm font-semibold uppercase text-white">
-                Choose dates and register
-              </StaticButton>
-            </div>
           </div>
           <div className="flex justify-center">
             <img

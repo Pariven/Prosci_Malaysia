@@ -156,7 +156,7 @@ export default function PctModelPage() {
             having on project ROI and outcomes cannot be overstated."
           </h2>
           <p className="mt-5 text-lg text-[#2f2a2f]">- Mary Brackett, University of Virginia</p>
-          <div className="mt-6 flex justify-end">
+          <div className="mt-6 flex justify-center">
             <img
               src="https://22088958.fs1.hubspotusercontent-na1.net/hubfs/22088958/quote-bottom.webp"
               alt="Quote mark"

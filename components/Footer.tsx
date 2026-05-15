@@ -25,7 +25,7 @@ const footerLinks = {
         subtitle: "For Individuals",
         links: [
           { label: "Certification Program", href: "/certification-program#change-management" },
-          "Membership",
+          { label: "Membership", href: "/membership" },
           { label: "Role-Based Certification", href: "/role-based-certification" },
         ],
       },
