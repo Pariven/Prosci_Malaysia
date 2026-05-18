@@ -292,11 +292,13 @@ export default function ContactUsPage() {
                   className="mt-2 block w-full rounded border border-[#ddd] px-4 py-2 text-[#3f484f] focus:border-[#5c1761] focus:outline-none"
                 >
                   <option value="">Please Select</option>
-                  <option value="certification">Certification Program Inquiry</option>
-                  <option value="training">Training & Development</option>
-                  <option value="consulting">Consulting Services</option>
-                  <option value="partnership">Partnership Opportunity</option>
-                  <option value="other">Other</option>
+                  <option value="certification-program">Change Management Certification Program Enquiry</option>
+                  <option value="delivering-project-results">Delivering Project Results (Role-Based Certification Program) Enquiry</option>
+                  <option value="taking-charge">Taking Charge Of Change (Role-Based Certification Program) Enquiry</option>
+                  <option value="leading-your-team">Leading Your Team Through Change (Role-Based Certification Program) Enquiry</option>
+                  <option value="enterprise-boot-camp">Enterprise Change Management Boot Camp Program Enquiry</option>
+                  <option value="advisory-services">Advisory Services</option>
+                  <option value="others">Others</option>
                 </select>
               </div>
 
@@ -315,24 +317,9 @@ export default function ContactUsPage() {
                 />
               </div>
 
-              <div className="rounded bg-[#f9f9f9] p-4 text-sm text-[#666666]">
-                <p className="mb-3">
-                  By submitting your contact information above, you allow Prosci to contact you about relevant
-                  content, products, and services. You may unsubscribe from these communications at anytime. For
-                  information on how to unsubscribe, as well as our privacy practices and commitment to protecting your
-                  privacy, check out our{' '}
-                  <a href="#" className="text-[#5c1761] underline">
-                    Privacy Policy
-                  </a>
-                  .
-                </p>
-                <div className="flex items-center gap-2">
-                  <div className="flex items-center gap-2 rounded bg-white p-2">
-                    <span className="text-xs text-gray-600">🔒 reCAPTCHA</span>
-                  </div>
-                  <span className="text-xs text-gray-500">protected by reCAPTCHA</span>
+                <div className="rounded bg-[#f9f9f9] p-4 text-sm text-[#666666]">
+                  <p className="mb-3">By submitting your contact information above, you allow Prosci to contact you about relevant content, products, and services.</p>
                 </div>
-              </div>
 
               <div className="text-center">
                 <button

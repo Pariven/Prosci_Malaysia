@@ -263,7 +263,7 @@ export default function SolutionsPage() {
           </h2>
           <div className="mt-8">
             <a
-              href="https://www.prosci.com/solutions/enterprise-training#go-to-form"
+              href="/certification-program"
               className="inline-flex items-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-[#3d1a4e] transition-colors hover:bg-gray-100"
             >
               Explore our solutions

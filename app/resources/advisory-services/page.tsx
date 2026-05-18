@@ -25,11 +25,11 @@ export default function AdvisoryServicesComingSoon() {
       </section>
 
       <section className="w-full bg-[#f7f5f3] py-24">
-        <div className="w-[90%] mx-auto">
+        <div className="w-full max-w-6xl mx-auto px-6">
           <h2 className="font-serif text-4xl md:text-5xl text-[#3b0a45] text-center mb-12 leading-tight">Your Advisory Partner for Change Success</h2>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
-            <div className="translate-x-[80px]">
+            <div className="md:translate-x-[80px]">
               <p className="text-base font-medium text-[#2f2a2f] mb-6 leading-7">
                 Organizations often struggle to realize returns on change initiatives or implement critical transformations. Yet, effective change is the cornerstone of business growth and innovation. Prosci's organizational change management consulting can help you maximize your change investments. We can:
               </p>
@@ -52,7 +52,7 @@ export default function AdvisoryServicesComingSoon() {
             </div>
 
             <div className="flex items-start justify-center">
-              <img src="/ChatGPT%20Image%20May%2012,%202026,%2006_57_03%20PM.png" alt="Professional meeting" className="w-full max-w-[420px] aspect-square object-cover -translate-x-[120px]" />
+              <img src="/ChatGPT%20Image%20May%2012,%202026,%2006_57_03%20PM.png" alt="Professional meeting" className="w-full max-w-[420px] aspect-square object-cover md:-translate-x-[120px]" />
             </div>
           </div>
         </div>

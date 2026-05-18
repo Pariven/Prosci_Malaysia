@@ -24,21 +24,21 @@ const footerLinks = {
       {
         subtitle: "For Individuals",
         links: [
-          { label: "Certification Program", href: "/certification-program#change-management" },
-          { label: "Membership", href: "/membership" },
+          { label: "Certification Program", href: "/certification-program" },
           { label: "Role-Based Certification", href: "/role-based-certification" },
+          { label: "Membership", href: "/membership" },
         ],
       },
       {
         subtitle: "For Organizations",
         links: [
-          "Enterprise Change Management Boot Camp",
+          { label: "Enterprise Change Management Boot Camp", href: "/resources/enterprise-boot-camp" },
         ],
       },
       {
-        subtitle: "Industry Insights",
+        subtitle: "Others",
         links: [
-          "Advisory Services",
+          { label: "Advisory Services", href: "/resources/advisory-services" },
         ],
       },
     ],
@@ -54,8 +54,8 @@ const footerLinks = {
     title: "ABOUT US",
     links: [
       { label: "Contact Us", href: "/contact-us" },
-      { label: "About Prosci", href: "https://www.kpintar.com/about-us.html" },
-      { label: "Gallery", href: "#" },
+      { label: "About Prosci Malaysia", href: "https://www.kpintar.com/about-us.html" },
+      { label: "Gallery", href: "/gallery" },
     ],
   },
 }

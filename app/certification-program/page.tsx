@@ -508,7 +508,7 @@ export default function CertificationProgramPage() {
                             </Link>
                           ) : (
                             <StaticButton className="shrink-0 rounded bg-[#5c1761] px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.1em] text-white opacity-60 whitespace-nowrap">
-                              Close
+                              Closed
                             </StaticButton>
                           )}
                         </div>
@@ -544,7 +544,7 @@ export default function CertificationProgramPage() {
                             </Link>
                           ) : (
                             <StaticButton className="shrink-0 rounded bg-[#5c1761] px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.1em] text-white opacity-60 whitespace-nowrap">
-                              Close
+                              Closed
                             </StaticButton>
                           )}
                         </div>

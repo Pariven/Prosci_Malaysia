@@ -98,12 +98,13 @@ export default function EnterpriseBootCampPage() {
                     <p className="mt-2 text-sm font-semibold text-[#3d1a4e]">None</p>
                   </div>
                 </div>
-                <Link
-                  href="/certification-program"
+                <a
+                  href="/pdf/ECM%20Boot%20Camp.pdf"
+                  download
                   className="inline-flex w-full items-center justify-center rounded-md bg-[#3d1a4e] px-4 py-3 text-xs font-semibold uppercase tracking-[0.2em] text-white transition-colors hover:bg-[#2d1339]"
                 >
                   Download brochure
-                </Link>
+                </a>
               </div>
             </div>
           </div>
