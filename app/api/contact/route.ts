@@ -22,7 +22,7 @@ export async function POST(req: Request) {
     } = data
 
     // Get configuration from environment variables
-    const toEmail = process.env.CONTACT_TO_EMAIL || 'enquiry@kpintar.com'
+    const toEmail = process.env.CONTACT_TO_EMAIL || 'enquiry@proscimalaysia.com'
     const fromEmail = process.env.CONTACT_FROM_EMAIL || 'noreply@proscimalaysia.com'
     const apiKey = process.env.RESEND_API_KEY
 

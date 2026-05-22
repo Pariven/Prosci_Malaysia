@@ -9,7 +9,7 @@ export default function PodcastComingSoon() {
       <section
         className="relative overflow-hidden bg-cover text-white"
         style={{
-          backgroundImage: `url('/images/ai-transformation.png')`,
+          backgroundImage: `url('/STRATEGY%202026%20Final.png')`,
           backgroundPosition: 'center',
         }}
       >

@@ -95,6 +95,20 @@ export default function ContactUsPage() {
 
       <section className="bg-gradient-to-br from-[#f5f2eb] to-[#e9eaf2] px-6 py-20">
         <div className="mx-auto max-w-2xl">
+          <div className="mb-6 rounded-lg border border-[#e5ddd4] bg-white p-5 text-sm leading-6 text-[#3f484f] shadow-[0_4px_20px_rgba(0,0,0,0.06)]">
+            <p className="font-semibold text-[#35104b]">K Pintar HC Sdn Bhd (1630311-X)</p>
+            <p>Suite C-4-4, 4th Floor,</p>
+            <p>Wisma Goshen,</p>
+            <p>Bangsar Trade Centre,</p>
+            <p>59200 Kuala Lumpur</p>
+            <p className="mt-4 font-semibold text-[#35104b]">Contact us</p>
+            <p>t: +603 2284 4148</p>
+            <p>m: +6016 217 7965</p>
+            <p className="mt-4">
+              E-mail: <a href="mailto:enquiry@proscimalaysia.com" className="font-medium text-[#35104b] underline decoration-[#35104b]/40 underline-offset-2">enquiry@proscimalaysia.com</a>
+            </p>
+          </div>
+
           <div className="rounded-lg bg-white p-10 shadow-[0_4px_20px_rgba(0,0,0,0.1)]">
             <h2 className="text-center text-3xl font-light text-[#3f484f] md:text-4xl">
               Have questions?
