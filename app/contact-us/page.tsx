@@ -94,28 +94,39 @@ export default function ContactUsPage() {
       </section>
 
       <section className="bg-gradient-to-br from-[#f5f2eb] to-[#e9eaf2] px-6 py-20">
-        <div className="mx-auto max-w-2xl">
-          <div className="mb-6 rounded-lg border border-[#e5ddd4] bg-white p-5 text-sm leading-6 text-[#3f484f] shadow-[0_4px_20px_rgba(0,0,0,0.06)]">
-            <p className="font-semibold text-[#35104b]">K Pintar HC Sdn Bhd (1630311-X)</p>
-            <p>Suite C-4-4, 4th Floor,</p>
-            <p>Wisma Goshen,</p>
-            <p>Bangsar Trade Centre,</p>
-            <p>59200 Kuala Lumpur</p>
-            <p className="mt-4 font-semibold text-[#35104b]">Contact us</p>
-            <p>t: +603 2284 4148</p>
-            <p>m: +6016 217 7965</p>
-            <p className="mt-4">
-              E-mail: <a href="mailto:enquiry@proscimalaysia.com" className="font-medium text-[#35104b] underline decoration-[#35104b]/40 underline-offset-2">enquiry@proscimalaysia.com</a>
-            </p>
-          </div>
+        <div className="mx-auto max-w-6xl">
+          <div className="grid gap-10 lg:grid-cols-[minmax(0,360px)_minmax(0,1fr)]">
+            <div className="space-y-6">
+              <div className="rounded-lg border border-[#e5ddd4] bg-white p-6 text-sm leading-6 text-[#3f484f] shadow-[0_4px_20px_rgba(0,0,0,0.06)]">
+                <p className="text-base font-semibold text-[#35104b]">K Pintar HC Sdn Bhd (1630311-X)</p>
+                <p className="mt-3">Suite C-4-4, 4th Floor,</p>
+                <p>Wisma Goshen,</p>
+                <p>Bangsar Trade Centre,</p>
+                <p>59200 Kuala Lumpur</p>
+                <p className="mt-5 font-semibold text-[#35104b]">Contact us</p>
+                <p>t: +603 2284 4148</p>
+                <p>m: +6016 217 7965</p>
+                <p className="mt-4">
+                  E-mail: <a href="mailto:enquiry@kpintar.com" className="font-medium text-[#35104b] underline decoration-[#35104b]/40 underline-offset-2">enquiry@kpintar.com</a>
+                </p>
+              </div>
 
-          <div className="rounded-lg bg-white p-10 shadow-[0_4px_20px_rgba(0,0,0,0.1)]">
-            <h2 className="text-center text-3xl font-light text-[#3f484f] md:text-4xl">
-              Have questions?
-            </h2>
-            <p className="mt-4 text-center text-base leading-6 text-[#666666]">
-              Your inquiry will be routed to the best team based on your reason for contact and country.
-            </p>
+              <div className="rounded-2xl bg-[#35104b] p-6 text-sm text-white shadow-[0_8px_30px_rgba(53,16,75,0.35)]">
+                <p className="text-base font-semibold">HRDC Claimable</p>
+                <p className="mt-3 leading-6 text-white/90">
+                  All our programmes are 100% HRDC claimable. We assist eligible Malaysian employers through the
+                  entire HRDC claims process.
+                </p>
+              </div>
+            </div>
+
+            <div className="rounded-2xl bg-white p-10 shadow-[0_10px_30px_rgba(0,0,0,0.12)]">
+              <h2 className="text-center text-3xl font-light text-[#3f484f] md:text-4xl">
+                Send Us a Message
+              </h2>
+              <p className="mt-4 text-center text-base leading-6 text-[#666666]">
+                Your inquiry will be routed to the best team based on your reason for contact and country.
+              </p>
 
             {submitStatus === 'success' && (
               <div className="mt-6 rounded-lg bg-[#d4edda] p-4 text-center text-[#155724]">
@@ -339,12 +350,13 @@ export default function ContactUsPage() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="rounded bg-[#35104b] px-8 py-3 text-sm font-semibold uppercase text-white transition-colors hover:bg-[#CCCCFF] hover:text-[#35104b] disabled:opacity-50"
+                  className="rounded bg-[#1f9097] px-8 py-3 text-sm font-semibold uppercase text-white transition-colors hover:bg-[#176e74] disabled:opacity-50"
                 >
                   {isSubmitting ? 'Submitting...' : 'SUBMIT'}
                 </button>
               </div>
             </form>
+            </div>
           </div>
         </div>
       </section>
