@@ -1,0 +1,141 @@
+/**
+ * Determine if the device has touch capabilities
+ * Adds class to html element as reference in CSS and JS
+ */
+function is_touch_device() {
+    return 'ontouchstart' in window || navigator.MaxTouchPoints > 0;
+}
+var $html = document.getElementsByTagName('html')[0];
+if (!is_touch_device()) {
+    $html.classList.add('no-touch');
+    $html.classList.remove('touch');
+} else {
+    $html.classList.add('touch');
+    $html.classList.remove('no-touch');
+}
+
+require(['jquery'], function ($) {
+    /*
+     * Wistia Popovers
+     * Extended logic for embedded Hubspot forms and responsive height
+     */
+    $('.wistia_trigger_popover').click(function (event) {
+        event.preventDefault();
+        var wistiaId = $(this).data('wistia-id');
+        var video = Wistia.api(wistiaId);
+        if (video) {
+            video.popover.show();
+            video.play();
+        }
+    });
+
+    function centerVideoPopover(hashedId) {
+        var $videoPopover = $('#wistia-' + hashedId + '-1_popover');
+        var scrollTop = Math.max(
+            window.pageYOffset,
+            document.documentElement.scrollTop,
+            document.body.scrollTop
+        );
+        // Add scroll top position to offset
+        var cssTop =
+            scrollTop + ($(window).height() - $videoPopover.height()) / 2;
+        $videoPopover.css('top', cssTop);
+    }
+
+    function isHubspotFormSubmitted(hubspotId, formId) {
+        console.log(
+            'Checking if formId ' + formId + ' has been submitted yet.'
+        );
+        var wistiaStorage = JSON.parse(window.localStorage.getItem('wistia'));
+        if (
+            wistiaStorage.hubspot &&
+            wistiaStorage.hubspot.forms &&
+            wistiaStorage.hubspot.forms.submitted
+        ) {
+            for (index in wistiaStorage.hubspot.forms.submitted) {
+                var thisForm = wistiaStorage.hubspot.forms.submitted[index];
+                if (thisForm.formId == formId) {
+                    // Check if submitted forms still exist
+                    // var $hubspotForms = $('[id*="wistiaHubspotForm-'+hubspotId+'-'+formId+'"]');
+                    // console.log($hubspotForms);
+                    // if ($hubspotForms.length) {
+                    //   // Remove form wrapper
+                    //   $hubspotForms.closest('section').remove();
+                    // }
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    window._wq = window._wq || [];
+    _wq.push({
+        id: '_all',
+        onReady: function (video) {
+            console.log('Video ' + video.hashedId() + ' is ready.');
+            video.bind('popovershow', function () {
+                // Add popover class to html tag for iOS
+                $('html').addClass('wistia_popover_mode');
+                // Add active class on close button
+                $(
+                    '#wistia-' +
+                        video.hashedId() +
+                        '-1_popover_popover_close_button'
+                ).addClass('active');
+                // Check if Hubspot form has been submitted yet
+                if (
+                    video.options.plugin.hubspotForm.hubspotFormEnabled &&
+                    !isHubspotFormSubmitted(
+                        video.options.plugin.hubspotForm.hubspotId,
+                        video.options.plugin.hubspotForm.hubspotFormId
+                    )
+                ) {
+                    console.log(
+                        'Form is enabled and has not been submitted yet.'
+                    );
+                    $('#wistia-' + video.hashedId() + '-1_popover').addClass(
+                        'formDisplayed'
+                    );
+                    centerVideoPopover(video.hashedId());
+                } else {
+                    console.log(
+                        'Video may not play if this is the same page load as form submission.'
+                    );
+                }
+            });
+            video.bind('popoverhide', function () {
+                // Remove popover class from html tag for iOS
+                $('html').removeClass('wistia_popover_mode');
+                // Remove Hubspot form class
+                $('#wistia-' + video.hashedId() + '-1_popover').removeClass(
+                    'formDisplayed'
+                );
+                // Remove active class on close button
+                $(
+                    '#wistia-' +
+                        video.hashedId() +
+                        '-1_popover_popover_close_button'
+                ).removeClass('active');
+            });
+            video.bind('play', function () {
+                $('#wistia-' + video.hashedId() + '-1_popover').removeClass(
+                    'formDisplayed'
+                );
+                centerVideoPopover(video.hashedId());
+            });
+        }
+    });
+
+    $('.nav_links a[href^="#"]').click(function(e) {
+        $('.nav_links a[href^="#"]').removeClass('active-link');
+        $(this).addClass('active-link');
+        $('html,body').animate({ scrollTop: $(this.hash).offset().top}, 1000);
+        return false;
+    });
+
+    $('a[href^="#"]').click(function(e) {
+        $('html,body').animate({ scrollTop: $(this.hash).offset().top}, 1000);
+        return false;
+    });
+});

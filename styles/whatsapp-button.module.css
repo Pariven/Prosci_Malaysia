@@ -1,0 +1,76 @@
+﻿.button {
+  display: inline-block;
+  transition: all 0.2s ease-in;
+  position: relative;
+  overflow: hidden;
+  z-index: 999;
+  color: #090909;
+  padding: 0.55em 2.6em 0.55em 1.35em;
+  font-size: 16px;
+  border-radius: 0.45em;
+  background: #e8e8e8;
+  border: 1px solid #e8e8e8;
+  text-decoration: none;
+}
+
+.icon {
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.label {
+  display: inline-block;
+}
+
+.button:active {
+  color: #666;
+}
+
+.button:hover {
+  color: #ffffff;
+  border: 1px solid #009087;
+}
+
+.container {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 999;
+  align-items: flex-end;
+}
+
+.calendar {
+  background: #35104b;
+  color: #fff;
+  border-color: #35104b;
+}
+
+.calendarIcon {
+  background: #35104b;
+  color: #fff;
+  border-color: #35104b;
+  z-index: 1001;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.calendarIcon .icon {
+  height: 18px;
+  width: 18px;
+  position: static;
+  right: auto;
+  top: auto;
+  transform: none;
+}
