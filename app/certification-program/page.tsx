@@ -258,8 +258,7 @@ const upcomingDates = [
     date: "20 - 22 July 2026",
     focus: "VILT",
     mode: "Online | English",
-    registerUrl:
-      "https://forms.proscimalaysia.com/Kpintar/form/PROSCIChangeManagementCertificationProgram9/formperma/UC8TZTqo9QdoQrsqHLHXIRzgbLGcEFdyzr_gxPD0F5E",
+    registerUrl: "",
   },
   {
     date: "10 - 12 Aug 2026",
@@ -271,8 +270,7 @@ const upcomingDates = [
     date: "17 - 19 Aug 2026",
     focus: "VILT",
     mode: "Online | English",
-    registerUrl:
-      "https://forms.proscimalaysia.com/Kpintar/form/PROSCIChangeManagementCertificationProgram10/formperma/YXyjvhFnOC-ir4ld34xxp4q4K0QEFpSk65tROn_S8Fk",
+    registerUrl: "",
   },
   {
     date: "21 - 23 Sept 2026",
