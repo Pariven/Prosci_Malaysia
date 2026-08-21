@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Role Based Section - Demo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root{--purple:#3b0a45;--muted:#6f767b}
+    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial}
+    .serif{font-family:'Playfair Display',serif}
+  </style>
+</head>
+<body class="bg-white text-[#3f484f]">
+  <main class="py-20">
+    <div class="mx-auto max-w-[1200px] px-6">
+      <!-- Heading -->
+      <header class="text-center mb-10">
+        <h1 class="serif text-[44px] leading-tight text-[#3b0a45]">The Prosci Approach to Enterprise Change Success</h1>
+        <p class="mt-4 max-w-2xl mx-auto text-base text-[#6f767b]">Our organizational change management training programs address common change challenges head-on with a structured, research-based approach that builds capability at every level of your enterprise.</p>
+      </header>
+
+      <!-- Two-column layout -->
+      <section class="grid grid-cols-1 md:grid-cols-12 md:gap-x-16 items-center">
+        <!-- Image (left) -->
+        <div class="md:col-span-5">
+          <div class="w-full rounded-[12px] overflow-hidden shadow-lg">
+            <img src="/images/Enterprise-Feature-Image-1.webp" alt="Enterprise training" class="w-full h-[420px] object-cover" />
+          </div>
+        </div>
+
+        <!-- Text (right) -->
+        <div class="mt-8 md:mt-0 md:col-span-7">
+          <div class="max-w-full md:pl-6">
+            <div class="space-y-6">
+              <div>
+                <h3 class="text-lg font-semibold text-[var(--purple)]">Role-based training</h3>
+                <p class="mt-2 text-sm text-[var(--muted)]">Targeted programs for every organizational level, from executives and sponsors to project teams and front-line employees.</p>
+              </div>
+
+              <div>
+                <h3 class="text-lg font-semibold text-[var(--purple)]">Enterprise-Scale Delivery</h3>
+                <p class="mt-2 text-sm text-[var(--muted)]">Flexible virtual and onsite delivery options that maintain consistency across global teams while adapting to local needs.</p>
+              </div>
+
+              <div>
+                <h3 class="text-lg font-semibold text-[var(--purple)]">Capability Building Focus</h3>
+                <p class="mt-2 text-sm text-[var(--muted)]">Train your internal teams to become self-sufficient in change management rather than creating long-term consulting dependency.</p>
+              </div>
+
+              <div>
+                <h3 class="text-lg font-semibold text-[var(--purple)]">Research-Based Foundation</h3>
+                <p class="mt-2 text-sm text-[var(--muted)]">25+ years of studying what works in change management with proven ADKAR® Model used by Fortune 100 companies worldwide.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>
