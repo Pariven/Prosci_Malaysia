@@ -107,7 +107,7 @@ export default function ContactUsPage() {
                 <p>t: +603 2284 4148</p>
                 <p>m: +6016 217 7965</p>
                 <p className="mt-4">
-                  E-mail: <a href="mailto:enquiry@kpintar.com" className="font-medium text-[#35104b] underline decoration-[#35104b]/40 underline-offset-2">enquiry@kpintar.com</a>
+                  E-mail: <a href="mailto:enquiry@changemanagement.my" className="font-medium text-[#35104b] underline decoration-[#35104b]/40 underline-offset-2">enquiry@changemanagement.my</a>
                 </p>
               </div>
 
