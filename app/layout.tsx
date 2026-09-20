@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Playfair_Display, Inter } from 'next/font/google'
+import Script from 'next/script'
 import { Analytics } from '@vercel/analytics/next'
 import CalendarButton from '@/components/CalendarButton'
 import WhatsAppButton from '@/components/WhatsAppButton'
@@ -38,6 +39,18 @@ export default function RootLayout({
         {children}
         <CalendarButton />
         <WhatsAppButton />
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-DCJ534TDBQ"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-DCJ534TDBQ');
+          `}
+        </Script>
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
     </html>
