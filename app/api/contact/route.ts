@@ -1,6 +1,14 @@
 import { Resend } from 'resend'
 import { NextResponse } from 'next/server'
 
+const escapeHtml = (value: unknown) =>
+  String(value || '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;')
+
 export async function POST(req: Request) {
   try {
     const data = await req.json()
@@ -20,12 +28,20 @@ export async function POST(req: Request) {
     } = data
 
     // Get configuration from environment variables
-    const toEmail = process.env.CONTACT_TO_EMAIL || 'enquiry@proscimalaysia.com'
+    const toEmail = process.env.CONTACT_TO_EMAIL || 'enquiry@changemanagement.my'
     const fromEmail = process.env.CONTACT_FROM_EMAIL || 'noreply@proscimalaysia.com'
     const apiKey = process.env.RESEND_API_KEY
 
     if (!apiKey) {
-      return NextResponse.json({ ok: false, error: 'RESEND_API_KEY_NOT_CONFIGURED' }, { status: 500 })
+      return NextResponse.json(
+        {
+          ok: false,
+          code: 'RESEND_API_KEY_NOT_CONFIGURED',
+          error: 'Contact email delivery is not configured.',
+          toEmail,
+        },
+        { status: 503 },
+      )
     }
 
     const resend = new Resend(apiKey)
@@ -35,18 +51,18 @@ export async function POST(req: Request) {
     const html = `
       <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
         <h2 style="color: #3d1a4e;">New Contact Form Submission</h2>
-        <p><strong>Name:</strong> ${firstName || ''} ${lastName || ''}</p>
-        <p><strong>Email:</strong> <a href="mailto:${email}">${email || ''}</a></p>
-        <p><strong>Job Title:</strong> ${jobTitle || ''}</p>
-        <p><strong>Organization:</strong> ${organization || ''}</p>
-        <p><strong>Phone:</strong> ${phone || ''}</p>
-        <p><strong>Job Level:</strong> ${jobLevel || ''}</p>
-        <p><strong>Industry:</strong> ${industry || ''}</p>
-        <p><strong>Country:</strong> ${country || ''}</p>
-        <p><strong>Reason for Contact:</strong> ${reasonForContact || ''}</p>
+        <p><strong>Name:</strong> ${escapeHtml(firstName)} ${escapeHtml(lastName)}</p>
+        <p><strong>Email:</strong> <a href="mailto:${escapeHtml(email)}">${escapeHtml(email)}</a></p>
+        <p><strong>Job Title:</strong> ${escapeHtml(jobTitle)}</p>
+        <p><strong>Organization:</strong> ${escapeHtml(organization)}</p>
+        <p><strong>Phone:</strong> ${escapeHtml(phone)}</p>
+        <p><strong>Job Level:</strong> ${escapeHtml(jobLevel)}</p>
+        <p><strong>Industry:</strong> ${escapeHtml(industry)}</p>
+        <p><strong>Country:</strong> ${escapeHtml(country)}</p>
+        <p><strong>Reason for Contact:</strong> ${escapeHtml(reasonForContact)}</p>
         <hr style="border: none; border-top: 1px solid #ddd; margin: 20px 0;">
         <p><strong>Comments:</strong></p>
-        <p style="white-space: pre-wrap; background: #f5f5f5; padding: 15px; border-radius: 5px;">${(comments || '').replace(/</g, '&lt;').replace(/>/g, '&gt;')}</p>
+        <p style="white-space: pre-wrap; background: #f5f5f5; padding: 15px; border-radius: 5px;">${escapeHtml(comments)}</p>
       </div>
     `
 

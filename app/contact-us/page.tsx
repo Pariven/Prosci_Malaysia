@@ -4,6 +4,8 @@ import { useState } from 'react'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 
+const contactEmail = 'enquiry@changemanagement.my'
+
 export default function ContactUsPage() {
   const [formData, setFormData] = useState({
     firstName: '',
@@ -20,7 +22,8 @@ export default function ContactUsPage() {
   })
 
   const [isSubmitting, setIsSubmitting] = useState(false)
-  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'fallback' | 'error'>('idle')
+  const [fallbackHref, setFallbackHref] = useState('')
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
@@ -30,10 +33,31 @@ export default function ContactUsPage() {
     }))
   }
 
+  const buildMailtoHref = () => {
+    const subject = `Website Contact: ${formData.reasonForContact || 'General Inquiry'} - ${formData.firstName} ${formData.lastName}`.trim()
+    const body = [
+      `Name: ${formData.firstName} ${formData.lastName}`.trim(),
+      `Email: ${formData.email}`,
+      `Job Title: ${formData.jobTitle}`,
+      `Organization: ${formData.organization}`,
+      `Phone: ${formData.phone}`,
+      `Job Level: ${formData.jobLevel}`,
+      `Industry: ${formData.industry}`,
+      `Country: ${formData.country}`,
+      `Reason for Contact: ${formData.reasonForContact}`,
+      '',
+      'Comments:',
+      formData.comments,
+    ].join('\n')
+
+    return `mailto:${contactEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
+  }
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
     setSubmitStatus('idle')
+    setFallbackHref('')
     try {
       const res = await fetch('/api/contact', {
         method: 'POST',
@@ -59,7 +83,14 @@ export default function ContactUsPage() {
           comments: '',
         })
       } else {
-        setSubmitStatus('error')
+        if (result.code === 'RESEND_API_KEY_NOT_CONFIGURED') {
+          const mailtoHref = buildMailtoHref()
+          setFallbackHref(mailtoHref)
+          setSubmitStatus('fallback')
+          window.location.href = mailtoHref
+        } else {
+          setSubmitStatus('error')
+        }
       }
     } catch (error) {
       setSubmitStatus('error')
@@ -137,6 +168,16 @@ export default function ContactUsPage() {
             {submitStatus === 'error' && (
               <div className="mt-6 rounded-lg bg-[#f8d7da] p-4 text-center text-[#721c24]">
                 Something went wrong. Please try again.
+              </div>
+            )}
+
+            {submitStatus === 'fallback' && (
+              <div className="mt-6 rounded-lg bg-[#fff3cd] p-4 text-center text-[#856404]">
+                Email delivery is not configured yet. Your email app should open with the message prepared. If it does not,{' '}
+                <a href={fallbackHref} className="font-semibold underline underline-offset-2">
+                  send it manually
+                </a>
+                .
               </div>
             )}
 
