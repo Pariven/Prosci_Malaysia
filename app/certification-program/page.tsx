@@ -276,29 +276,25 @@ const upcomingDates = [
     date: "21 - 23 Sept 2026",
     focus: "Face to Face",
     mode: "Kuala Lumpur | English",
-    registerUrl:
-      "https://forms.proscimalaysia.com/Kpintar/form/PROSCIChangeManagementCertificationProgram3/formperma/ho987O5nNMB51FknKxdlhNvWhEj2iSFieY8XR0nhHL0",
+    registerUrl: "",
   },
   {
     date: "7 - 9 Sept 2026",
     focus: "VILT",
     mode: "Online | English",
-    registerUrl:
-      "https://forms.proscimalaysia.com/Kpintar/form/PROSCIChangeManagementCertificationProgram11/formperma/6Dn3ox6oL7-qJ97vSWhrmSFW0uRdeIshRh-kWk0Iup0",
+    registerUrl: "",
   },
   {
     date: "12 - 14 Oct 2026",
     focus: "Face to Face",
     mode: "Kuala Lumpur | English",
-    registerUrl:
-      "https://forms.proscimalaysia.com/Kpintar/form/PROSCIChangeManagementCertificationProgram4/formperma/HnvY16SVSdawhxq5eU3HEpI2jsLuX2FbnfhXNc3ZJnA",
+    registerUrl: "",
   },
   {
     date: "19 - 21 Oct 2026",
     focus: "VILT",
     mode: "Online | English",
-    registerUrl:
-      "https://forms.proscimalaysia.com/Kpintar/form/PROSCIChangeManagementCertificationProgram12/formperma/6zp0AofWuNvR0B06Ij_yCeTGDRr83TCEs4lB0o_sCYY",
+    registerUrl: "",
   },
   {
     date: "16 - 18 Nov 2026",
