@@ -304,7 +304,7 @@ const upcomingDates = [
       "https://forms.proscimalaysia.com/Kpintar/form/PROSCIChangeManagementCertificationProgram5/formperma/sBoKiZuWCkKob3IYpGDoqEvdLdSAavACR0yjb5osi4g",
   },
   {
-    date: "2 - 4 Nov 2026",
+    date: "23 - 25 Nov 2026",
     focus: "VILT",
     mode: "Online | English",
     registerUrl:
